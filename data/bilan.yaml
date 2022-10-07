@@ -17,7 +17,7 @@ bilan:
   formule: 
     somme: 
       - pratique
-      - equipements
+      # - equipements
       # - spectateur
       # - virtuel
       

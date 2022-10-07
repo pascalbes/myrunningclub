@@ -137,6 +137,20 @@ constantes . equipements . treadmill:
   formule: 4.12
   unité: kgCO2e
 
+
+## Lieux
+
+constantes . empreinte lieu:
+constantes . empreinte lieu . outside:
+  formule: 0.103
+  unité: kgCO2e
+constantes . empreinte lieu . ontrack light:
+  formule: 0.103
+  unité: kgCO2e
+constantes . empreinte lieu . ontrack no light:
+  formule: 0.103
+  unité: kgCO2e
+
 ## Transports
 
 constantes . empreinte transport:
@@ -158,10 +172,17 @@ constantes . empreinte transport . voiture thermique heure:
   formule: 0.218
   unité: kgCO2e
 
-constantes . empreinte transport . covoiturage:
+constantes . empreinte transport . covoiturage thermique:
   formule: 0.14568
   unité: kgCO2e
-constantes . empreinte transport . covoiturage heure:
+constantes . empreinte transport . covoiturage thermique heure:
+  formule: 0.14568
+  unité: kgCO2e
+
+constantes . empreinte transport . covoiturage elec:
+  formule: 0.14568
+  unité: kgCO2e
+constantes . empreinte transport . covoiturage elec heure:
   formule: 0.14568
   unité: kgCO2e
 
@@ -173,17 +194,17 @@ constantes . empreinte transport . deux-roues motorisé:
   formule: 0.0763
   unité: kgCO2e
 
-constantes . empreinte transport . ferroviaire:
+constantes . empreinte transport . train:
   formule: 0.00236
   unité: kgCO2e
-constantes . empreinte transport . ferroviaire heure:
+constantes . empreinte transport . train heure:
   formule: 0.00236
   unité: kgCO2e
 
-constantes . empreinte transport . avion:
+constantes . empreinte transport . plane:
   formule: 106.15 ## à confirmer
   unité: kgCO2e
-constantes . empreinte transport . avion heure:
+constantes . empreinte transport . plane heure:
   formule: 106.15
   unité: kgCO2e
 
