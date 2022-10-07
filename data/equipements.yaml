@@ -1,61 +1,59 @@
 equipements:
   abbréviation: equip.
+  titre: equipment
   description: |
 
   couleur: '#20245C'
   icônes: 🏘
-  applicable si: 
-    une de ces conditions:
-      - pratique . loisir . présent
-      - pratique . futsal . présent
-      - pratique . club . présent
-      - pratique . international . présent
   formule:
     somme: 
-      - matériel * matériel . coefficient achat matériel * matériel . coefficient effort matériel
+      - matériel * coefficient achat matériel * coefficient effort matériel
   unité: kgCO2e
 
-# Effort Matériel
 
-equipements . matériel . coefficient effort matériel:
+
+######
+## COEFF
+######
+
+equipements . coefficient effort matériel:
   formule:
     variations: 
-      - si: effort = 'faible effort'
+      - si: effort = 'Low'
         alors: effort faible
-      - si: effort = 'Moyen'
+      - si: effort = 'Medium'
         alors: effort moyen
       - si: effort = 'Maximum'
         alors: effort maximum
 
-equipements . matériel . coefficient effort matériel . effort faible:
+equipements . coefficient effort matériel . effort faible:
   formule: 1.5
 
-equipements . matériel . coefficient effort matériel . effort moyen:
+equipements . coefficient effort matériel . effort moyen:
   formule: 1
 
-equipements . matériel . coefficient effort matériel . effort maximum:
+equipements . coefficient effort matériel . effort maximum:
   formule: 0.75
 
-equipements . matériel . coefficient effort matériel . effort:
-  question: Quel effort faites-vous pour garder votre matériel le plus longtemps possible ?
+equipements . coefficient effort matériel . effort:
+  question: What effort do you make to keep your equipment as long as possible ?
   par défaut: "'Moyen'"
   formule:
     une possibilité: 
       choix obligatoire: oui
       possibilités: 
-        - faible effort
-        - Moyen
+        - Low
+        - Medium
         - Maximum
-      par défaut: Moyen
+      par défaut: Medium
 
-equipements . matériel . coefficient effort matériel . effort . faible effort:
-  titre: Peu d'efforts
-equipements . matériel . coefficient effort matériel . effort . Moyen:
-equipements . matériel . coefficient effort matériel . effort . Maximum:
+equipements . coefficient effort matériel . effort . Low:
+equipements . coefficient effort matériel . effort . Medium:
+equipements . coefficient effort matériel . effort . Maximum:
 
 # Achat Matériel
 
-equipements . matériel . coefficient achat matériel:
+equipements . coefficient achat matériel:
   formule:
     variations: 
       - si: type = 'acheté neuf'
@@ -71,8 +69,8 @@ equipements . matériel . coefficient achat matériel:
         alors:
           valeur: 0.25
 
-equipements . matériel . coefficient achat matériel . type:
-  question: 'En général le matériel que vous utilisez est :'
+equipements . coefficient achat matériel . type:
+  question: 'The equipment you use is usually…'
   par défaut: "'acheté neuf'"
   formule:
     une possibilité: 
@@ -84,15 +82,29 @@ equipements . matériel . coefficient achat matériel . type:
         - loué
       par défaut: acheté neuf
 
-equipements . matériel . coefficient achat matériel . type . acheté neuf:
-equipements . matériel . coefficient achat matériel . type . achat occasion:
-  titre: acheté d'occasion
-equipements . matériel . coefficient achat matériel . type . récupéré:
-equipements . matériel . coefficient achat matériel . type . loué:
+equipements . coefficient achat matériel . type . acheté neuf:
+  titre: New
+equipements . coefficient achat matériel . type . achat occasion:
+  titre: Second hand
+equipements . coefficient achat matériel . type . récupéré:
+  titre: Recovered
+equipements . coefficient achat matériel . type . loué:
+  titre: Rent
 
-# Equipements achetés
+##########
+# Matériel
+##########
 
 equipements . matériel:
+  unité: kgCO2e
+  formule:
+    somme:
+      - textile
+      - elec
+
+# Equipements Textile
+
+equipements . matériel . textile:
   formule:
     somme:
       - maillots
@@ -101,97 +113,163 @@ equipements . matériel:
       - survêtements
       - sous-vêtements
       - manteaux
-      - matériel de récupération électrique
-      - ballons
+      - trousers
+      - accessories
   unité: kgCO2e
 
 ##
 
-equipements . matériel . maillots:
+equipements . matériel . textile . maillots:
+  titre: T-shirts
   icônes: 👕
   formule: constantes . equipements . maillots * nombre
   unité: kgCO2e
 
-equipements . matériel . maillots . nombre:
-  question: Maillots ?
+equipements . matériel . textile . maillots . nombre:
+  question: T-shirts
   par défaut: 2
 
 ##
 
-equipements . matériel . short et collants:
+equipements . matériel . textile . short et collants:
+  titre: Shorts
   icônes: 🩳
   formule: constantes . equipements . short et collants * nombre
   unité: kgCO2e
 
-equipements . matériel . short et collants . nombre:
-  question: Shorts et collants ?
+equipements . matériel . textile . short et collants . nombre:
+  question: Shorts
   par défaut: 2
 
 ##
 
-equipements . matériel . chaussures:
+equipements . matériel . textile . chaussures:
+  titre: Shoes
   icônes: 👟
   formule: constantes . equipements . chaussures * nombre
   unité: kgCO2e
 
-equipements . matériel . chaussures . nombre:
-  question: Paire de chaussures ?
+equipements . matériel . textile . chaussures . nombre:
+  question: Shoes
   par défaut: 1
 
 ##
 
-equipements . matériel . survêtements:
+equipements . matériel . textile . survêtements:
+  titre: Tracksuit
   icônes: 🦺👖
   formule: constantes . equipements . survêtements * nombre
   unité: kgCO2e
 
-equipements . matériel . survêtements . nombre:
-  question: Survêtements ?
+equipements . matériel . textile . survêtements . nombre:
+  question: Tracksuit
   par défaut: 1
 
 ##
 
-equipements . matériel . sous-vêtements:
+equipements . matériel . textile . sous-vêtements:
+  titre: Underwear
   icônes: 👟🩲
   formule: constantes . equipements . sous-vêtements * nombre
   unité: kgCO2e
 
-equipements . matériel . sous-vêtements . nombre:
-  question: Sous-vêtements ?
+equipements . matériel . textile . sous-vêtements . nombre:  
   par défaut: 3
 
 ##
 
-equipements . matériel . manteaux:
+equipements . matériel . textile . manteaux:
+  titre: Coats
   icônes: 🧥
   formule: constantes . equipements . manteaux * nombre
   unité: kgCO2e
 
-equipements . matériel . manteaux . nombre:
-  question: Manteaux ?
+equipements . matériel . textile . manteaux . nombre:
   par défaut: 1
 
 ##
 
-equipements . matériel . matériel de récupération électrique:
+equipements . matériel . textile . trousers:
+  titre: Running tights or trousers
   icônes: 🔌
-  formule: constantes . equipements . matériel de récupération électrique * nombre
+  formule: constantes . equipements . trousers * nombre
   unité: kgCO2e
 
-equipements . matériel . matériel de récupération électrique . nombre:
-  question: Matériel de récupération électrique (électrostimulateur, pistolet de massage, etc.)  ?
+equipements . matériel . textile . trousers . nombre:
   par défaut: 0
 
 ##
 
-equipements . matériel . ballons:
+equipements . matériel . textile . accessories:
+  titre: Other pieces of clothing (hats, gloves, etc.)
   icônes: ⚽️
-  formule: constantes . equipements . ballons * nombre
+  formule: constantes . equipements . accessories * nombre
   unité: kgCO2e
 
-equipements . matériel . ballons . nombre:
-  question: Ballons ?
+equipements . matériel . textile . accessories . nombre:
   par défaut: 1
 
 ##
 
+# Equipements Elec
+
+equipements . matériel . elec:
+  formule:
+    somme:
+      - recovery
+      - clockwatch
+      - gps watch
+      - treadmill
+  unité: kgCO2e
+
+##
+
+equipements . matériel . elec . recovery:
+  titre: Electrical recovery device
+  icônes: 👕
+  formule: constantes . equipements . recovery * nombre
+  unité: kgCO2e
+
+equipements . matériel . elec . recovery . nombre:
+  question: Electrical recovery device
+  par défaut: 2
+
+##
+
+equipements . matériel . elec . clockwatch:
+  titre: Basic clockwatch
+  icônes: 👕
+  formule: constantes . equipements . clockwatch * nombre
+  unité: kgCO2e
+
+equipements . matériel . elec . clockwatch . nombre:
+  question: Basic clockwatch
+  par défaut: 2
+
+##
+
+equipements . matériel . elec . gps watch:
+  titre: GPS running watch
+  icônes: 👕
+  formule: constantes . equipements . gps watch * nombre
+  unité: kgCO2e
+
+equipements . matériel . elec . gps watch . nombre:
+  question: GPS running watch
+  par défaut: 2
+
+##
+
+equipements . matériel . elec . treadmill:
+  titre: Treadmill
+  icônes: 👕
+  formule: constantes . equipements . treadmill * nombre
+  unité: kgCO2e
+
+equipements . matériel . elec . treadmill . nombre:
+  question: Treadmill
+  par défaut: 2
+
+
+
+  

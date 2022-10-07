@@ -1,99 +1,99 @@
-## Vélo
+# ## Vélo
 
-pratique . entrainement vélo plutôt que voiture:
-  titre: Aller aux entrainements de football à vélo plutôt qu'en voiture
-  formule: entrainement voiture
-  description: |
-    Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au sport réduit notre empreinte climat, mais améliore aussi notre qualité de vie. 70% des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme. En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
-  unité: kgCO2e
+# pratique . entrainement vélo plutôt que voiture:
+#   titre: Aller aux entrainements de football à vélo plutôt qu'en voiture
+#   formule: entrainement voiture
+#   description: |
+#     Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au sport réduit notre empreinte climat, mais améliore aussi notre qualité de vie. 70% des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme. En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
+#   unité: kgCO2e
 
-pratique . entrainement voiture:
-  formule:
-    somme:
-      - pratique . loisir . déplacement . voiture élec * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
-      - pratique . loisir . déplacement . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
-      - pratique . loisir . déplacement . covoiturage * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
-      - pratique . futsal . déplacement domicile . voiture élec * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
-      - pratique . futsal . déplacement domicile . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
-      - pratique . futsal . déplacement domicile . covoiturage * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
-      - pratique . club . déplacement domicile . voiture élec * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
-      - pratique . club . déplacement domicile . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
-      - pratique . club . déplacement domicile . covoiturage * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+# pratique . entrainement voiture:
+#   formule:
+#     somme:
+#       - pratique . loisir . déplacement . voiture élec * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+#       - pratique . loisir . déplacement . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+#       - pratique . loisir . déplacement . covoiturage * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+#       - pratique . futsal . déplacement domicile . voiture élec * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+#       - pratique . futsal . déplacement domicile . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+#       - pratique . futsal . déplacement domicile . covoiturage * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+#       - pratique . club . déplacement domicile . voiture élec * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+#       - pratique . club . déplacement domicile . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+#       - pratique . club . déplacement domicile . covoiturage * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
 
-## Transports communs
+# ## Transports communs
 
-pratique . entrainement transports communs plutôt que voiture:
-  titre: Aller aux entrainements de football en transports communs plutôt qu'en voiture
-  formule: entrainement voiture - entrainement transports communs
-  unité: kgCO2e
-  description: |
-    Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au sport réduit notre empreinte climat, mais améliore aussi notre qualité de vie. 70% des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme. En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
+# pratique . entrainement transports communs plutôt que voiture:
+#   titre: Aller aux entrainements de football en transports communs plutôt qu'en voiture
+#   formule: entrainement voiture - entrainement transports communs
+#   unité: kgCO2e
+#   description: |
+#     Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au sport réduit notre empreinte climat, mais améliore aussi notre qualité de vie. 70% des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme. En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
 
-pratique . entrainement transports communs: ## avec les déplacements de la voiture
-  formule:
-    somme:
-      - pratique . loisir . déplacement . voiture élec * constantes . nb mois pratique / constantes . empreinte transport . voiture élec * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
-      - pratique . loisir . déplacement . voiture thermique * constantes . nb mois pratique / constantes . empreinte transport . voiture thermique * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
-      - pratique . loisir . déplacement . covoiturage * constantes . nb mois pratique / constantes . empreinte transport . covoiturage * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
-      - pratique . futsal . déplacement domicile . voiture élec * constantes . nb mois pratique / constantes . empreinte transport . voiture élec * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
-      - pratique . futsal . déplacement domicile . voiture thermique * constantes . nb mois pratique / constantes . empreinte transport . voiture thermique * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
-      - pratique . futsal . déplacement domicile . covoiturage * constantes . nb mois pratique / constantes . empreinte transport . covoiturage * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
-      - pratique . club . déplacement domicile . voiture élec * constantes . nb mois pratique / constantes . empreinte transport . voiture élec * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
-      - pratique . club . déplacement domicile . voiture thermique * constantes . nb mois pratique / constantes . empreinte transport . voiture thermique * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
-      - pratique . club . déplacement domicile . covoiturage * constantes . nb mois pratique / constantes . empreinte transport . covoiturage * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
+# pratique . entrainement transports communs: ## avec les déplacements de la voiture
+#   formule:
+#     somme:
+#       - pratique . loisir . déplacement . voiture élec * constantes . nb mois pratique / constantes . empreinte transport . voiture élec * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
+#       - pratique . loisir . déplacement . voiture thermique * constantes . nb mois pratique / constantes . empreinte transport . voiture thermique * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
+#       - pratique . loisir . déplacement . covoiturage * constantes . nb mois pratique / constantes . empreinte transport . covoiturage * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
+#       - pratique . futsal . déplacement domicile . voiture élec * constantes . nb mois pratique / constantes . empreinte transport . voiture élec * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
+#       - pratique . futsal . déplacement domicile . voiture thermique * constantes . nb mois pratique / constantes . empreinte transport . voiture thermique * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
+#       - pratique . futsal . déplacement domicile . covoiturage * constantes . nb mois pratique / constantes . empreinte transport . covoiturage * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
+#       - pratique . club . déplacement domicile . voiture élec * constantes . nb mois pratique / constantes . empreinte transport . voiture élec * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
+#       - pratique . club . déplacement domicile . voiture thermique * constantes . nb mois pratique / constantes . empreinte transport . voiture thermique * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
+#       - pratique . club . déplacement domicile . covoiturage * constantes . nb mois pratique / constantes . empreinte transport . covoiturage * constantes . empreinte transport . transports en commun * pratique . club . déplacement domicile . distance
 
-## Covoiturage
+# ## Covoiturage
 
-pratique . entrainement covoiturage:
-  titre: Aller aux entrainements de football en covoiturage
-  formule: entrainement voiture thermique * constantes . empreinte transport . covoiturage / constantes . empreinte transport . voiture thermique
-  unité: kgCO2e
-  description: |
-    Si le covoiturage longue distance est bien connu en France, celui des courtes distances est presque inexistant (par exemple, aujourd’hui seuls 3 % des déplacements domicile-travail sont réalisés en covoiturage). privilégier les modes doux ou transports en commun (bus, métro, vélo, marche, etc.) le plus possible. Le calculateur Mon Impact Transport vous permet de visualiser et comparer l'impact des différents modes de déplacement.
+# pratique . entrainement covoiturage:
+#   titre: Aller aux entrainements de football en covoiturage
+#   formule: entrainement voiture thermique * constantes . empreinte transport . covoiturage / constantes . empreinte transport . voiture thermique
+#   unité: kgCO2e
+#   description: |
+#     Si le covoiturage longue distance est bien connu en France, celui des courtes distances est presque inexistant (par exemple, aujourd’hui seuls 3 % des déplacements domicile-travail sont réalisés en covoiturage). privilégier les modes doux ou transports en commun (bus, métro, vélo, marche, etc.) le plus possible. Le calculateur Mon Impact Transport vous permet de visualiser et comparer l'impact des différents modes de déplacement.
 
-pratique . entrainement voiture thermique:
-  formule:
-    somme:
-      - pratique . loisir . déplacement . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
-      - pratique . futsal . déplacement domicile . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
-      - pratique . club . déplacement domicile . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+# pratique . entrainement voiture thermique:
+#   formule:
+#     somme:
+#       - pratique . loisir . déplacement . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+#       - pratique . futsal . déplacement domicile . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
+#       - pratique . club . déplacement domicile . voiture thermique * constantes . nb mois pratique * pratique . club . déplacement domicile . distance
 
-## Avion
+# ## Avion
 
-pratique . arrêter l'avion:
-  formule:
-    somme:
-      - pratique . club . déplacement exterieur national . avion * constantes . nb mois matches
-      - pratique . club . déplacement exterieur hors national . avion * constantes . nb mois pratique
-      - pratique . international . déplacements . avion
-      - spectateur . déplacements . nationaux . déplacements . avion
-  unité: kgCO2e
-  description: |
-    L'avion a une empreinte importante sur le climat. Elle ne se limite pas aux seules émissions de CO₂, qui n'est qu'un gaz à effet de serre parmi d'autres. L'empreinte totale de l'avion est estimée à environ 2x celle du CO₂. Voir le calculateur transport pour visualiser cette empreinte et la comparer aux autres moyens de transport.
+# pratique . arrêter l'avion:
+#   formule:
+#     somme:
+#       - pratique . club . déplacement exterieur national . avion * constantes . nb mois matches
+#       - pratique . club . déplacement exterieur hors national . avion * constantes . nb mois pratique
+#       - pratique . international . déplacements . avion
+#       - spectateur . déplacements . nationaux . déplacements . avion
+#   unité: kgCO2e
+#   description: |
+#     L'avion a une empreinte importante sur le climat. Elle ne se limite pas aux seules émissions de CO₂, qui n'est qu'un gaz à effet de serre parmi d'autres. L'empreinte totale de l'avion est estimée à environ 2x celle du CO₂. Voir le calculateur transport pour visualiser cette empreinte et la comparer aux autres moyens de transport.
 
-## végé
+# ## végé
 
-pratique . devenir végétarien:
-  applicable si:
-    une de ces conditions:
-      - pratique . alimentation . surplus . type repas = 'flexitarien'
-      - pratique . alimentation . surplus . type repas = 'classique'
-      - pratique . alimentation . surplus . type repas = 'carnivore'
-  formule: pratique . alimentation . surplus - pratique . alimentation . surplus . calories * pratique . alimentation . surplus . empreinte végétarien * 365
-  unité: kgCO2e
-  description: |
-    Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts). Moins fort que le régime végétalien, il permet déjà une réduction très importante de l'empreinte sur le climat.
+# pratique . devenir végétarien:
+#   applicable si:
+#     une de ces conditions:
+#       - pratique . alimentation . surplus . type repas = 'flexitarien'
+#       - pratique . alimentation . surplus . type repas = 'classique'
+#       - pratique . alimentation . surplus . type repas = 'carnivore'
+#   formule: pratique . alimentation . surplus - pratique . alimentation . surplus . calories * pratique . alimentation . surplus . empreinte végétarien * 365
+#   unité: kgCO2e
+#   description: |
+#     Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts). Moins fort que le régime végétalien, il permet déjà une réduction très importante de l'empreinte sur le climat.
 
-## écran
+# ## écran
 
-pratique . écran:
-  titre: Réduire mon temps devant un écran
-  formule: 
-    somme:
-      - spectateur . téléspectateur . lieu
-      - spectateur . téléspectateur . numérique
-      - spectateur . téléspectateur . télévision
-      - virtuel . actualités
-      - virtuel . paris
-      - virtuel . jeux vidéos
-  unité: kgCO2e
+# pratique . écran:
+#   titre: Réduire mon temps devant un écran
+#   formule: 
+#     somme:
+#       - spectateur . téléspectateur . lieu
+#       - spectateur . téléspectateur . numérique
+#       - spectateur . téléspectateur . télévision
+#       - virtuel . actualités
+#       - virtuel . paris
+#       - virtuel . jeux vidéos
+#   unité: kgCO2e

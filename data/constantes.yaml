@@ -118,10 +118,22 @@ constantes . equipements . sous-vêtements:
 constantes . equipements . manteaux:
   formule: 85.8
   unité: kgCO2e
-constantes . equipements . matériel de récupération électrique:
+constantes . equipements . trousers:
   formule: 16.5
   unité: kgCO2e
-constantes . equipements . ballons:
+constantes . equipements . accessories:
+  formule: 4.12
+  unité: kgCO2e
+constantes . equipements . recovery:
+  formule: 4.12
+  unité: kgCO2e
+constantes . equipements . clockwatch:
+  formule: 4.12
+  unité: kgCO2e
+constantes . equipements . gps watch:
+  formule: 4.12
+  unité: kgCO2e
+constantes . equipements . treadmill:
   formule: 4.12
   unité: kgCO2e
 

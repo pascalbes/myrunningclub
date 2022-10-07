@@ -1,12 +1,12 @@
 actions:
-  formule:
-    somme:
-      - pratique . entrainement vélo plutôt que voiture
-      - pratique . entrainement transports communs plutôt que voiture
-      - pratique . entrainement covoiturage
-      - pratique . arrêter l'avion
-      - pratique . devenir végétarien
-      - pratique . écran
+  formule: 0
+    # somme:
+      # - pratique . entrainement vélo plutôt que voiture
+      # - pratique . entrainement transports communs plutôt que voiture
+      # - pratique . entrainement covoiturage
+      # - pratique . arrêter l'avion
+      # - pratique . devenir végétarien
+      # - pratique . écran
       # - transport . arrêter l'avion
       # - transport . arrêter l'avion court
       # - alimentation . réduire viande . par deux
@@ -40,14 +40,14 @@ actions:
       # - services publics . pression locale
       # - divers . publicité
 
-actions pétrole:
-  formule:
-    somme:
-      - transport . arrêter l'avion
-      - transport . arrêter l'avion court
-      - logement . remplacer fioul par bois
-      - transport . boulot . covoiturage
-      - transport . boulot . commun
-      - transport . boulot . télétravail
-      - transport . voiture 5km
-      - transport . voiture électrique
+# actions pétrole:
+#   formule:
+#     somme:
+      # - transport . arrêter l'avion
+      # - transport . arrêter l'avion court
+      # - logement . remplacer fioul par bois
+      # - transport . boulot . covoiturage
+      # - transport . boulot . commun
+      # - transport . boulot . télétravail
+      # - transport . voiture 5km
+      # - transport . voiture électrique

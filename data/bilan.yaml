@@ -18,8 +18,8 @@ bilan:
     somme: 
       - pratique
       - equipements
-      - spectateur
-      - virtuel
+      # - spectateur
+      # - virtuel
       
   références: 
     - https://avenirclimatique.org/action/
