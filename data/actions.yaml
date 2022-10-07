@@ -1,0 +1,53 @@
+actions:
+  formule:
+    somme:
+      - pratique . entrainement vélo plutôt que voiture
+      - pratique . entrainement transports communs plutôt que voiture
+      - pratique . entrainement covoiturage
+      - pratique . arrêter l'avion
+      - pratique . devenir végétarien
+      - pratique . écran
+      # - transport . arrêter l'avion
+      # - transport . arrêter l'avion court
+      # - alimentation . réduire viande . par deux
+      # - alimentation . réduire viande . par quatre
+      # - alimentation . devenir végétarien
+      # - alimentation . devenir végétalien
+      # - alimentation . viande faible empreinte
+      # - alimentation . manger de saison
+      # - alimentation . boisson . eau en bouteille . arrêter
+      # - alimentation . manger local
+      # - alimentation . gaspillage alimentaire . réduire
+      # - logement . éteindre appareils
+      # - logement . remplacer fioul par bois
+      # - logement . remplacer gaz par PAC
+      # - logement . séchage air libre
+      # - transport . éco-conduite
+      # - logement . baisse température
+      # - logement . éclairage . LED
+      # - logement . rénovation énergétique
+      # - logement . rénovation énergétique BBC
+      # - transport . boulot . covoiturage
+      # - transport . boulot . commun
+      # - transport . boulot . télétravail
+      # - transport . voiture 5km
+      # - transport . voiture électrique
+      # - transport . voiture . limitation autoroute
+      # - divers . partage NGC
+      # - divers . aider les autres
+      # - divers . électroménager . allongement
+      # - services publics . voter
+      # - services publics . pression locale
+      # - divers . publicité
+
+actions pétrole:
+  formule:
+    somme:
+      - transport . arrêter l'avion
+      - transport . arrêter l'avion court
+      - logement . remplacer fioul par bois
+      - transport . boulot . covoiturage
+      - transport . boulot . commun
+      - transport . boulot . télétravail
+      - transport . voiture 5km
+      - transport . voiture électrique

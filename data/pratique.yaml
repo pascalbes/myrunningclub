@@ -1,0 +1,1397 @@
+pratique:
+  abbréviation: prat.
+  description: |
+    
+  couleur: '#2B6DB1'
+  icônes: 🏘
+  formule:
+    somme: 
+      - loisir
+      - futsal
+      - club
+      - international
+      - alimentation
+  unité: kgCO2e
+
+
+#########
+## Cadrage (hors pratique)
+#########
+
+pratique . spectateur:
+  titre: Spectateur·rice (stade)
+  formule: 0
+  unité: kgCO2e
+
+pratique . spectateur . présent:
+  par défaut: non
+
+pratique . téléspectateur:
+  titre: Téléspectateur·rice
+
+pratique . téléspectateur . présent:
+  par défaut: non
+
+pratique . paris:
+  titre: Paris sportifs
+  unité: kgCO2e
+
+pratique . paris . présent:
+  par défaut: non
+
+pratique . jeux vidéos:
+  titre: Jeux vidéos
+  unité: kgCO2e
+
+pratique . jeux vidéos . présent:
+  par défaut: non
+
+
+
+#########
+## Loisir
+#########
+
+pratique . loisir:
+  applicable si: présent
+  titre: Loisir (hors club)
+  formule:
+    somme:
+      - déplacement
+      - exterieur
+      - exterieur herbe
+      - intérieur
+  unité: kgCO2e
+
+pratique . loisir . présent:
+  par défaut: non
+
+## C.1.1
+
+pratique . loisir . nombre déplacements pratique:
+  formule: 
+    somme:
+      - pratique . loisir . exterieur . nombre pratiques
+      - pratique . loisir . exterieur herbe . nombre pratiques
+      - pratique . loisir . intérieur . nombre pratiques
+
+pratique . loisir . exterieur:
+  titre: Extérieur (city, terrain synthétique, terrain en bitume)
+  formule: constantes . pratique . loisir . exterieur * nombre pratiques * constantes . nb mois pratique
+  unité: kgCO2e
+
+pratique . loisir . exterieur . nombre pratiques:
+  question: Extérieur (city, terrain synthétique, terrain en bitume)
+  par défaut: 4
+
+##
+
+pratique . loisir . exterieur herbe:
+  titre: Extérieur (terrain en herbe)
+  formule: constantes . pratique . loisir . exterieur herbe * nombre pratiques * constantes . nb mois pratique
+  unité: kgCO2e
+
+pratique . loisir . exterieur herbe . nombre pratiques:
+  question: Extérieur (terrain en herbe)
+  par défaut: 4
+
+##
+
+pratique . loisir . intérieur:
+  titre: Intérieur (gymnase)
+  formule: constantes . pratique . loisir . intérieur * nombre pratiques * constantes . nb mois pratique
+  unité: kgCO2e
+
+pratique . loisir . intérieur . nombre pratiques:
+  question: Intérieur (gymnase)
+  par défaut: 4
+
+## C.1.2
+
+pratique . loisir . distance:
+  question: En moyenne, quelle distance (aller-retour) pour vous rendre sur le lieu de pratique loisir parcourez-vous à chaque fois ?
+  par défaut: 20
+  unité: km
+
+## loisirs / déplacements
+
+pratique . loisir . déplacement:
+  formule: nombre transports * distance * facteur déplacement * constantes . nb mois pratique
+  unité: kgCO2
+
+pratique . loisir . déplacement . nombre transports:
+  formule: 
+    somme:
+      - doux . nombre déplacements
+      - voiture élec . nombre déplacements
+      - voiture thermique . nombre déplacements
+      - covoiturage . nombre déplacements
+      - transports en commun . nombre déplacements
+      - deux-roues motorisé . nombre déplacements
+
+pratique . loisir . déplacement . facteur déplacement:
+  formule: 
+    variations: 
+      - si: nombre transports = 0
+        alors: 0
+      - sinon: empreinte totale / nombre transports
+
+pratique . loisir . déplacement . empreinte totale :
+  formule:
+    somme:
+      - doux
+      - voiture élec
+      - voiture thermique
+      - covoiturage
+      - transports en commun
+      - deux-roues motorisé
+
+## Marche
+
+pratique . loisir . déplacement . doux:
+  titre: Vélo, trottinette ou à pied
+  formule: constantes . empreinte transport . doux * nombre déplacements
+  unité: kgCO2e
+
+pratique . loisir . déplacement . doux . nombre déplacements:
+  par défaut: 0
+
+## Voiture Elec
+
+pratique . loisir . déplacement . voiture élec:
+  titre: Voiture individuelle électrique
+  formule: constantes . empreinte transport . voiture élec * nombre déplacements
+  unité: kgCO2e
+
+pratique . loisir . déplacement . voiture élec . nombre déplacements:
+  par défaut: 0
+
+## Voiture thermique
+
+pratique . loisir . déplacement . voiture thermique:
+  titre: Voiture individuelle thermique
+  formule: constantes . empreinte transport . voiture thermique * nombre déplacements
+  unité: kgCO2e
+
+pratique . loisir . déplacement . voiture thermique . nombre déplacements:
+  par défaut: 0
+
+## Covoiturage
+
+pratique . loisir . déplacement . covoiturage:
+  formule: constantes . empreinte transport . covoiturage * nombre déplacements
+  unité: kgCO2e
+
+pratique . loisir . déplacement . covoiturage . nombre déplacements:
+  question: Covoiturage
+  par défaut: 0
+
+## Transports en commun
+
+pratique . loisir . déplacement . transports en commun:
+  formule: constantes . empreinte transport . transports en commun * nombre déplacements
+  unité: kgCO2e
+
+pratique . loisir . déplacement . transports en commun . nombre déplacements:
+  question: Transports en commun
+  par défaut: 0
+
+## Deux-roues motorisé
+
+pratique . loisir . déplacement . deux-roues motorisé:
+  formule: constantes . empreinte transport . deux-roues motorisé * nombre déplacements
+  unité: kgCO2e
+
+pratique . loisir . déplacement . deux-roues motorisé . nombre déplacements:
+  question: Deux-roues motorisé
+  par défaut: 0
+
+
+#########
+## Futsal
+#########
+
+pratique . futsal:
+  titre: Futsal
+  applicable si: présent
+  formule:
+    somme:
+      - entrainement
+      - matches
+      - déplacement domicile
+      - déplacement exterieur
+  unité: kgCO2
+
+pratique . futsal . présent:
+  par défaut: non
+
+pratique . futsal . niveau pratique:
+  question: Quel est votre niveau de pratique du futsal ?
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - D1 futsal
+        - D2 futsal
+        - régional
+        - district
+        - club hors compétition
+
+pratique . futsal . niveau pratique . D1 futsal:
+pratique . futsal . niveau pratique . D2 futsal:
+pratique . futsal . niveau pratique . régional:
+pratique . futsal . niveau pratique . district:
+pratique . futsal . niveau pratique . club hors compétition:
+
+## Futsal / entrainement
+
+pratique . futsal . entrainement:
+  formule: FE Gymnase * constantes . nb semaines pratique * nb entrainements
+  unité: kgCO2
+
+pratique . futsal . nb entrainements:
+  question: En période d’activité, quel est votre rythme d’entraînement hebdomadaire de futsal ?
+  par défaut: 2
+  unité: entraînement / semaine
+
+pratique . futsal . FE Gymnase:
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: niveau pratique = 'D1 futsal'
+        alors: constantes . pratique . futsal . D1 futsal . FE
+      - si: niveau pratique = 'D2 futsal'
+        alors: constantes . pratique . futsal . D2 futsal . FE
+      - si: niveau pratique = 'régional'
+        alors: constantes . pratique . futsal . régional . FE
+      - si: niveau pratique = 'district'
+        alors: constantes . pratique . futsal . district . FE
+      - si: niveau pratique = 'club hors compétition'
+        alors: constantes . pratique . futsal . club hors compétition . FE
+
+## Futsal / matches
+
+pratique . futsal . matches:
+  non applicable si: niveau pratique = 'club hors compétition'
+  formule: FE Gymnase * constantes . nb mois pratique * nb matches
+  unité: kgCO2
+
+pratique . futsal . fréquence:
+  question: En saison de compétition, quelle est votre fréquence de matchs de futsal ?
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - hebdomadaire
+        - bimensuel
+        - mensuel
+
+pratique . futsal . fréquence . hebdomadaire:
+pratique . futsal . fréquence . bimensuel:
+pratique . futsal . fréquence . mensuel:
+
+pratique . futsal . nb matches:
+  formule:
+    variations:
+      - si: fréquence = 'hebdomadaire'
+        alors: 4
+      - si: fréquence = 'bimensuel'
+        alors: 2
+      - si: fréquence = 'mensuel'
+        alors: 1
+
+## Futsal / Déplacement domicile
+
+pratique . futsal . déplacement domicile:
+  formule: nombre transports * distance * facteur déplacement * constantes . nb mois pratique
+  unité: kgCO2
+
+pratique . futsal . déplacement domicile . distance:
+  question: En moyenne, quelle distance (aller-retour) parcourez-vous pour vous rendre à l’entraînement et à vos matchs de fustal à domicile ?
+  par défaut: 20
+  unité: km
+
+pratique . futsal . déplacement domicile . nombre transports:
+  formule: 
+    somme:
+      - doux . nombre déplacements
+      - voiture élec . nombre déplacements
+      - voiture thermique . nombre déplacements
+      - covoiturage . nombre déplacements
+      - transports en commun . nombre déplacements
+      - deux-roues motorisé . nombre déplacements
+
+pratique . futsal . déplacement domicile . facteur déplacement:
+  formule: 
+    variations: 
+      - si: nombre transports = 0
+        alors: 0
+      - sinon: empreinte totale / nombre transports
+
+
+pratique . futsal . déplacement domicile . empreinte totale :
+  formule:
+    somme:
+      - doux
+      - voiture élec
+      - voiture thermique
+      - covoiturage
+      - transports en commun
+      - deux-roues motorisé
+
+## Marche
+
+pratique . futsal . déplacement domicile . doux:
+  titre: Vélo, trottinette ou à pied
+  formule: constantes . empreinte transport . doux * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement domicile . doux . nombre déplacements:
+  par défaut: 0
+
+## Voiture Elec
+
+pratique . futsal . déplacement domicile . voiture élec:
+  titre: Voiture individuelle électrique
+  formule: constantes . empreinte transport . voiture élec * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement domicile . voiture élec . nombre déplacements:
+  par défaut: 0
+
+## Voiture thermique
+
+pratique . futsal . déplacement domicile . voiture thermique:
+  titre: Voiture individuelle thermique
+  formule: constantes . empreinte transport . voiture thermique * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement domicile . voiture thermique . nombre déplacements:
+  par défaut: 0
+
+## Covoiturage
+
+pratique . futsal . déplacement domicile . covoiturage:
+  formule: constantes . empreinte transport . covoiturage * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement domicile . covoiturage . nombre déplacements:
+  question: Covoiturage
+  par défaut: 0
+
+## Transports en commun
+
+pratique . futsal . déplacement domicile . transports en commun:
+  formule: constantes . empreinte transport . transports en commun * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement domicile . transports en commun . nombre déplacements:
+  question: Transports en commun
+  par défaut: 0
+
+## Deux-roues motorisé
+
+pratique . futsal . déplacement domicile . deux-roues motorisé:
+  formule: constantes . empreinte transport . deux-roues motorisé * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement domicile . deux-roues motorisé . nombre déplacements:
+  question: Deux-roues motorisé
+  par défaut: 0
+
+
+## Futsal / Déplacement exterieur
+
+pratique . futsal . déplacement exterieur:
+  non applicable si: niveau pratique = 'club hors compétition'
+  formule: nombre transports * distance * facteur déplacement * constantes . nb mois pratique
+  unité: kgCO2
+
+pratique . futsal . déplacement exterieur . distance:
+  unité: km
+  formule:
+    variations: 
+      - si: niveau pratique = 'D1 futsal'
+        alors: constantes . pratique . distance . nationale
+      - si: niveau pratique = 'D2 futsal'
+        alors: constantes . pratique . distance . nationale
+      - si: niveau pratique = 'régional'
+        alors: constantes . pratique . distance . régionale
+      - si: niveau pratique = 'district'
+        alors: constantes . pratique . distance . départementale
+      - si: niveau pratique = 'club hors compétition'
+        alors: constantes . pratique . distance . départementale
+
+pratique . futsal . déplacement exterieur . nombre transports:
+  formule: 
+    somme:
+      - doux . nombre déplacements
+      - voiture élec . nombre déplacements
+      - voiture thermique . nombre déplacements
+      - covoiturage . nombre déplacements
+      - transports en commun . nombre déplacements
+      - deux-roues motorisé . nombre déplacements
+
+pratique . futsal . déplacement exterieur . facteur déplacement:
+  formule: 
+    variations: 
+      - si: nombre transports = 0
+        alors: 0
+      - sinon: empreinte totale / nombre transports
+
+
+pratique . futsal . déplacement exterieur . empreinte totale :
+  formule:
+    somme:
+      - doux
+      - voiture élec
+      - voiture thermique
+      - covoiturage
+      - transports en commun
+      - deux-roues motorisé
+
+## Marche
+
+pratique . futsal . déplacement exterieur . doux:
+  titre: Vélo, trottinette ou à pied
+  formule: constantes . empreinte transport . doux * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement exterieur . doux . nombre déplacements:
+  par défaut: 0
+
+## Voiture Elec
+
+pratique . futsal . déplacement exterieur . voiture élec:
+  titre: Voiture individuelle électrique
+  formule: constantes . empreinte transport . voiture élec * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement exterieur . voiture élec . nombre déplacements:
+  par défaut: 0
+
+## Voiture thermique
+
+pratique . futsal . déplacement exterieur . voiture thermique:
+  titre: Voiture individuelle thermique
+  formule: constantes . empreinte transport . voiture thermique * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement exterieur . voiture thermique . nombre déplacements:
+  par défaut: 0
+
+## Covoiturage
+
+pratique . futsal . déplacement exterieur . covoiturage:
+  formule: constantes . empreinte transport . covoiturage * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement exterieur . covoiturage . nombre déplacements:
+  question: Covoiturage
+  par défaut: 0
+
+## Transports en commun
+
+pratique . futsal . déplacement exterieur . transports en commun:
+  formule: constantes . empreinte transport . transports en commun * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement exterieur . transports en commun . nombre déplacements:
+  question: Transports en commun
+  par défaut: 0
+
+## Deux-roues motorisé
+
+pratique . futsal . déplacement exterieur . deux-roues motorisé:
+  formule: constantes . empreinte transport . deux-roues motorisé * nombre déplacements
+  unité: kgCO2e
+
+pratique . futsal . déplacement exterieur . deux-roues motorisé . nombre déplacements:
+  question: Deux-roues motorisé
+  par défaut: 0
+
+###############################
+###############################
+############### Club
+###############################
+###############################
+
+pratique . club:
+  titre: Club FFF ou autre
+  applicable si: présent
+  formule:
+    somme:
+      - entrainement
+      - déplacement domicile
+      - matches
+      - déplacement exterieur hors national
+      - déplacement exterieur national
+  unité: kgCO2
+
+pratique . club . présent:
+  par défaut: non
+
+pratique . club . ligue:
+  question: A quelles compétitions participez-vous ?
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - ligue femme
+        - ligue homme
+        # - hors FFF
+
+pratique . club . ligue . ligue femme:
+  titre: Compétitions féminines
+pratique . club . ligue . ligue homme:
+  titre: Compétitions masculines
+pratique . club . ligue . hors FFF:
+  titre: Compétitions futsal
+
+
+pratique . club . ligue . ligue homme . niveau pratique:
+  applicable si: pratique . club . ligue = 'ligue homme'
+  question: Quel est votre niveau de pratique en club ?
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - pro
+        - amateur 1
+        - amateur 2
+        - régional
+        - départemental
+
+pratique . club . ligue . ligue homme . niveau pratique . pro:
+  titre: Ligue 1 Uber Eats ou Ligue 2 BKT 
+pratique . club . ligue . ligue homme . niveau pratique . amateur 1:
+  titre: National 1
+pratique . club . ligue . ligue homme . niveau pratique . amateur 2:
+  titre: National 2
+pratique . club . ligue . ligue homme . niveau pratique . régional:
+  titre: National 3 ou Régional
+pratique . club . ligue . ligue homme . niveau pratique . départemental:
+  titre: Disctrict
+
+
+pratique . club . ligue . ligue femme . niveau pratique:
+  applicable si: pratique . club . ligue = 'ligue femme'
+  question: Quel est votre niveau de pratique en club ?
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - d1 Arkema
+        - division 2
+        - régional
+        - district
+
+pratique . club . ligue . ligue femme . niveau pratique . d1 Arkema:
+pratique . club . ligue . ligue femme . niveau pratique . division 2:
+pratique . club . ligue . ligue femme . niveau pratique . régional:
+pratique . club . ligue . ligue femme . niveau pratique . district:
+
+
+############
+## CLUB / entrainement
+############
+
+pratique . club . entrainement:
+  formule: 0.61 * constantes . nb semaines pratique * nb entrainements
+  unité: kgCO2
+
+pratique . club . nb entrainements:
+  question: En période d’activité, quel est votre rythme d’entraînement hebdomadaire ?
+  par défaut: 2
+  unité: entraînement / semaine
+
+pratique . club . FE Stade:
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: pratique . club . ligue . ligue homme . niveau pratique = 'pro'
+        alors: 6.86
+      - si: pratique . club . ligue . ligue homme . niveau pratique = 'amateur 1'
+        alors: 3.36
+      - si: pratique . club . ligue . ligue homme . niveau pratique = 'amateur 2'
+        alors: 1.92
+      - si: pratique . club . ligue . ligue homme . niveau pratique = 'régional'
+        alors: 1.23
+      - si: pratique . club . ligue . ligue homme . niveau pratique = 'départemental'
+        alors: 0.79
+      - si: pratique . club . ligue . ligue femme . niveau pratique = 'd1 Arkema'
+        alors: 6.86
+      - si: pratique . club . ligue . ligue femme . niveau pratique = 'division 2'
+        alors: 3.36
+      - si: pratique . club . ligue . ligue femme . niveau pratique = 'régional'
+        alors: 1.23
+      - si: pratique . club . ligue . ligue femme . niveau pratique = 'district'
+        alors: 0.79
+      - si: pratique . club . ligue = 'hors FFF'
+        alors: 0.61
+
+
+#######
+## CLUB / Déplacement domicile
+#######
+
+pratique . club . déplacement domicile:
+  formule: nombre transports * distance * facteur déplacement * constantes . nb mois pratique
+  unité: kgCO2
+
+pratique . club . déplacement domicile . distance:
+  question: En moyenne, quelle distance (aller-retour) parcourez-vous pour vous rendre à l’entraînement et à vos matchs à domicile ?
+  par défaut: 20
+  unité: km
+
+pratique . club . déplacement domicile . nombre transports:
+  formule: 
+    somme:
+      - doux . nombre déplacements
+      - voiture élec . nombre déplacements
+      - voiture thermique . nombre déplacements
+      - covoiturage . nombre déplacements
+      - transports en commun . nombre déplacements
+      - deux-roues motorisé . nombre déplacements
+
+pratique . club . déplacement domicile . facteur déplacement:
+  formule: 
+    variations: 
+      - si: nombre transports = 0
+        alors: 0
+      - sinon: empreinte totale / nombre transports
+
+
+pratique . club . déplacement domicile . empreinte totale :
+  formule:
+    somme:
+      - doux
+      - voiture élec
+      - voiture thermique
+      - covoiturage
+      - transports en commun
+      - deux-roues motorisé
+
+## Marche
+
+pratique . club . déplacement domicile . doux:
+  titre: Vélo, trottinette ou à pied
+  formule: constantes . empreinte transport . doux * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement domicile . doux . nombre déplacements:
+  par défaut: 0
+
+## Voiture Elec
+
+pratique . club . déplacement domicile . voiture élec:
+  titre: Voiture individuelle électrique
+  formule: constantes . empreinte transport . voiture élec * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement domicile . voiture élec . nombre déplacements:
+  par défaut: 0
+
+## Voiture thermique
+
+pratique . club . déplacement domicile . voiture thermique:
+  titre: Voiture individuelle thermique
+  formule: constantes . empreinte transport . voiture thermique * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement domicile . voiture thermique . nombre déplacements:
+  par défaut: 0
+
+## Covoiturage
+
+pratique . club . déplacement domicile . covoiturage:
+  formule: constantes . empreinte transport . covoiturage * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement domicile . covoiturage . nombre déplacements:
+  question: Covoiturage
+  par défaut: 0
+
+## Transports en commun
+
+pratique . club . déplacement domicile . transports en commun:
+  formule: constantes . empreinte transport . transports en commun * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement domicile . transports en commun . nombre déplacements:
+  question: Transports en commun
+  par défaut: 0
+
+## Deux-roues motorisé
+
+pratique . club . déplacement domicile . deux-roues motorisé:
+  formule: constantes . empreinte transport . deux-roues motorisé * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement domicile . deux-roues motorisé . nombre déplacements:
+  question: Deux-roues motorisé
+  par défaut: 0
+
+#######
+## CLUB / Matches
+#######
+
+pratique . club . matches:
+  formule: pratique . club . FE Stade * constantes . nb mois pratique * nb matches
+  unité: kgCO2
+
+pratique . club . fréquence:
+  question: En saison de compétition, quelle est votre fréquence de matchs ?
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - hebdomadaire
+        - bimensuel
+        - mensuel
+
+pratique . club . fréquence . hebdomadaire:
+pratique . club . fréquence . bimensuel:
+pratique . club . fréquence . mensuel:
+
+pratique . club . nb matches:
+  formule:
+    variations:
+      - si: fréquence = 'hebdomadaire'
+        alors: 4
+      - si: fréquence = 'bimensuel'
+        alors: 2
+      - si: fréquence = 'mensuel'
+        alors: 1
+
+#######
+## CLUB / Match / National
+#######
+
+pratique . club . déplacement exterieur national:
+  applicable si: 
+    une de ces conditions:
+      - pratique . club . ligue . ligue homme . niveau pratique = 'pro'
+      - pratique . club . ligue . ligue homme . niveau pratique = 'amateur 1'
+      - pratique . club . ligue . ligue homme . niveau pratique = 'amateur 2'
+      - pratique . club . ligue . ligue femme . niveau pratique = 'd1 Arkema'
+      - pratique . club . ligue . ligue femme . niveau pratique = 'division 2'
+  formule: nombre total heures * facteur * constantes . nb mois matches
+  unité: kgCO2
+
+pratique . club . déplacement exterieur national . nombre total heures:
+  formule: 
+    somme:
+      - avion . nombre heures
+      - voiture élec . nombre heures
+      - voiture thermique . nombre heures
+      - covoiturage . nombre heures
+      - car . nombre heures
+      - ferroviaire . nombre heures
+
+pratique . club . déplacement exterieur national . facteur:
+  formule: 
+    variations: 
+      - si: nombre total heures = 0
+        alors: 0
+      - sinon: empreinte totale / nombre total heures
+
+
+pratique . club . déplacement exterieur national . empreinte totale :
+  formule:
+    somme:
+      - avion
+      - voiture élec
+      - voiture thermique
+      - covoiturage
+      - car
+      - ferroviaire
+
+## Avion
+
+pratique . club . déplacement exterieur national . avion:
+  titre: Avion
+  formule: constantes . empreinte transport . avion heure * nombre heures
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur national . avion . nombre heures:
+  par défaut: 0
+
+## Voiture Elec
+
+pratique . club . déplacement exterieur national . voiture élec:
+  titre: Voiture individuelle électrique
+  formule: constantes . empreinte transport . voiture élec heure * nombre heures
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur national . voiture élec . nombre heures:
+  par défaut: 0
+
+## Voiture thermique
+
+pratique . club . déplacement exterieur national . voiture thermique:
+  titre: Voiture individuelle thermique
+  formule: constantes . empreinte transport . voiture thermique heure * nombre heures
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur national . voiture thermique . nombre heures:
+  par défaut: 0
+
+## Covoiturage
+
+pratique . club . déplacement exterieur national . covoiturage:
+  formule: constantes . empreinte transport . covoiturage heure * nombre heures
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur national . covoiturage . nombre heures:
+  question: Covoiturage
+  par défaut: 0
+
+## car
+
+pratique . club . déplacement exterieur national . car:
+  formule: constantes . empreinte transport . car heure * nombre heures
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur national . car . nombre heures:
+  question: car
+  par défaut: 0
+
+## ferroviaire
+
+pratique . club . déplacement exterieur national . ferroviaire:
+  formule: constantes . empreinte transport . ferroviaire heure * nombre heures
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur national . ferroviaire . nombre heures:
+  question: Train ou métro
+  par défaut: 0
+
+#######
+## CLUB / Match / Déplacement exterieur hors national
+#######
+
+pratique . club . déplacement exterieur hors national:
+  applicable si: 
+    une de ces conditions:
+      - pratique . club . ligue . ligue homme . niveau pratique = 'régional'
+      - pratique . club . ligue . ligue homme . niveau pratique = 'départemental'
+      - pratique . club . ligue . ligue femme . niveau pratique = 'régional 1'
+      - pratique . club . ligue . ligue femme . niveau pratique = 'district'
+  formule: nombre transports * distance * facteur déplacement * constantes . nb mois pratique
+  unité: kgCO2
+
+pratique . club . déplacement exterieur hors national . distance:
+  formule:
+    variations:
+      - si: pratique . club . ligue . ligue homme . niveau pratique = 'régional'
+        alors: constantes . pratique . distance . régionale
+      - si: pratique . club . ligue . ligue homme . niveau pratique = 'départemental'
+        alors: constantes . pratique . distance . départementale
+      - si: pratique . club . ligue . ligue femme . niveau pratique = 'régional 1'
+        alors: constantes . pratique . distance . régionale
+      - si: pratique . club . ligue . ligue femme . niveau pratique = 'district'
+        alors: constantes . pratique . distance . départementale
+  unité: km
+
+pratique . club . déplacement exterieur hors national . nombre transports:
+  formule: 
+    somme:
+      - doux . nombre déplacements
+      - voiture élec . nombre déplacements
+      - voiture thermique . nombre déplacements
+      - covoiturage . nombre déplacements
+      - transports en commun . nombre déplacements
+      - deux-roues motorisé . nombre déplacements
+
+pratique . club . déplacement exterieur hors national . facteur déplacement:
+  formule: 
+    variations: 
+      - si: nombre transports = 0
+        alors: 0
+      - sinon: empreinte totale / nombre transports
+
+
+pratique . club . déplacement exterieur hors national . empreinte totale :
+  formule:
+    somme:
+      - doux
+      - voiture élec
+      - voiture thermique
+      - covoiturage
+      - transports en commun
+      - deux-roues motorisé
+      - minibus
+      - car
+      - ferroviaire
+      - avion
+
+## Marche
+
+pratique . club . déplacement exterieur hors national . doux:
+  titre: Vélo, trottinette ou à pied
+  formule: constantes . empreinte transport . doux * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur hors national . doux . nombre déplacements:
+  par défaut: 0
+
+## Voiture Elec
+
+pratique . club . déplacement exterieur hors national . voiture élec:
+  titre: Voiture individuelle électrique
+  formule: constantes . empreinte transport . voiture élec * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur hors national . voiture élec . nombre déplacements:
+  par défaut: 0
+
+## Voiture thermique
+
+pratique . club . déplacement exterieur hors national . voiture thermique:
+  titre: Voiture individuelle thermique
+  formule: constantes . empreinte transport . voiture thermique * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur hors national . voiture thermique . nombre déplacements:
+  par défaut: 0
+
+## Covoiturage
+
+pratique . club . déplacement exterieur hors national . covoiturage:
+  formule: constantes . empreinte transport . covoiturage * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur hors national . covoiturage . nombre déplacements:
+  question: Covoiturage
+  par défaut: 0
+
+## Transports en commun
+
+pratique . club . déplacement exterieur hors national . transports en commun:
+  formule: constantes . empreinte transport . transports en commun * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur hors national . transports en commun . nombre déplacements:
+  question: Transports en commun
+  par défaut: 0
+
+## Deux-roues motorisé
+
+pratique . club . déplacement exterieur hors national . deux-roues motorisé:
+  formule: constantes . empreinte transport . deux-roues motorisé * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur hors national . deux-roues motorisé . nombre déplacements:
+  question: Deux-roues motorisé
+  par défaut: 0
+
+## minibus
+
+pratique . club . déplacement exterieur hors national . minibus:
+  formule: constantes . empreinte transport . minibus * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur hors national . minibus . nombre déplacements:
+  question: Minibus
+  par défaut: 0
+
+## avion
+
+pratique . club . déplacement exterieur hors national . avion:
+  formule: constantes . empreinte transport . avion * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur hors national . avion . nombre déplacements:
+  question: Train ou métro
+  par défaut: 0
+
+## car
+
+pratique . club . déplacement exterieur hors national . car:
+  formule: constantes . empreinte transport . car * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur hors national . car . nombre déplacements:
+  question: car
+  par défaut: 0
+
+## ferroviaire
+
+pratique . club . déplacement exterieur hors national . ferroviaire:
+  formule: constantes . empreinte transport . ferroviaire * nombre déplacements
+  unité: kgCO2e
+
+pratique . club . déplacement exterieur hors national . ferroviaire . nombre déplacements:
+  question: Train ou métro
+  par défaut: 0
+
+###############################
+###############################
+############### International
+###############################
+###############################
+
+pratique . international:
+  applicable si: présent
+  formule:
+    somme:
+      - séjour
+      - déplacements
+  unité: kgCO2e
+
+pratique . international . présent:
+  question: Internationale
+  par défaut: non
+
+##########
+## Séjour
+##########
+
+pratique . international . séjour :
+  icônes: 🧃
+  titre: Sur une année, combien de jours passez-vous en compétition internationale en tant que joueur ?
+  formule: empreinte * nombre
+  unité: kgCO2e
+
+pratique . international . séjour . nombre:
+  question: Sur une année, combien de jours passez-vous en compétition internationale en tant que joueur ?
+  par défaut: 2
+  unité: jour
+
+pratique . international . séjour . empreinte:
+  formule: 5.35
+  unité: kgCO2e/jour
+
+##########
+## Déplacements
+##########
+
+pratique . international . déplacements:
+  formule:
+    somme:
+      - avion
+      - voiture élec
+      - voiture thermique
+      - covoiturage
+      - car
+      - ferroviaire
+
+## Marche
+
+pratique . international . déplacements . avion:
+  titre: Avion
+  formule: constantes . empreinte transport . avion * nombre heures
+  unité: kgCO2e
+
+pratique . international . déplacements . avion . nombre heures:
+  par défaut: 0
+
+## Voiture Elec
+
+pratique . international . déplacements . voiture élec:
+  titre: Voiture individuelle électrique
+  formule: constantes . empreinte transport . voiture élec * nombre heures
+  unité: kgCO2e
+
+pratique . international . déplacements . voiture élec . nombre heures:
+  par défaut: 0
+
+## Voiture thermique
+
+pratique . international . déplacements . voiture thermique:
+  titre: Voiture individuelle thermique
+  formule: constantes . empreinte transport . voiture thermique * nombre heures
+  unité: kgCO2e
+
+pratique . international . déplacements . voiture thermique . nombre heures:
+  par défaut: 0
+
+## Covoiturage
+
+pratique . international . déplacements . covoiturage:
+  formule: constantes . empreinte transport . covoiturage * nombre heures
+  unité: kgCO2e
+
+pratique . international . déplacements . covoiturage . nombre heures:
+  question: Covoiturage
+  par défaut: 0
+
+## car
+
+pratique . international . déplacements . car:
+  formule: constantes . empreinte transport . car * nombre heures
+  unité: kgCO2e
+
+pratique . international . déplacements . car . nombre heures:
+  question: car
+  par défaut: 0
+
+## ferroviaire
+
+pratique . international . déplacements . ferroviaire:
+  formule: constantes . empreinte transport . ferroviaire * nombre heures
+  unité: kgCO2e
+
+pratique . international . déplacements . ferroviaire . nombre heures:
+  question: Train ou métro
+  par défaut: 0
+
+###############################
+###############################
+############### Alimentation
+###############################
+###############################
+
+pratique . alimentation:
+  formule:
+    somme:
+      - surplus
+      - séance club
+      - séance loisir
+
+pratique . alimentation . surplus:
+  applicable si: 
+    une de ces conditions:
+      - pratique . loisir . présent
+      - pratique . futsal . présent
+      - pratique . club . présent
+      - pratique . international . présent
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: type repas = 'végétalien'
+        alors: calories * empreinte végétalien * 365
+      - si: type repas = 'végétarien'
+        alors: calories * empreinte végétarien * 365
+      - si: type repas = 'flexitarien'
+        alors: calories * empreinte flexitarien * 365
+      - si: type repas = 'classique'
+        alors: calories * empreinte classique * 365
+      - si: type repas = 'carnivore'
+        alors: calories * empreinte carnivore * 365
+      - sinon: calories * empreinte classique * 365
+
+pratique . alimentation . surplus . type repas:
+  question: Quel est votre type de régime alimentaire ? 
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - végétalien
+        - végétarien
+        - flexitarien
+        - classique
+        - carnivore
+  par défaut: classique
+
+pratique . alimentation . surplus . type repas . végétalien:
+pratique . alimentation . surplus . type repas . végétarien:
+pratique . alimentation . surplus . type repas . flexitarien:
+pratique . alimentation . surplus . type repas . classique: oui
+pratique . alimentation . surplus . type repas . carnivore:
+
+pratique . alimentation . surplus . calories:
+  question: Par rapport à un être humain de votre taille et de votre genre, combien de Kcal consommez vous en plus au quotidien ?
+  suggestions: 
+    normal: 0
+    légèrement plus: 200
+    beaucoup plus: 800
+    régime de champion: 1500
+  unité: kcal
+  par défaut: 200
+
+pratique . alimentation . surplus . empreinte végétalien:
+  unité: kgCO2/kcal
+  formule: 0.98 / 2500
+
+pratique . alimentation . surplus . empreinte végétarien:
+  unité: kgCO2/kcal
+  formule: 1.76 / 2500
+
+pratique . alimentation . surplus . empreinte flexitarien:
+  unité: kgCO2/kcal
+  formule: 2.86 / 2500
+
+pratique . alimentation . surplus . empreinte classique:
+  unité: kgCO2/kcal
+  formule: 4.53 / 2500
+
+pratique . alimentation . surplus . empreinte carnivore:
+  unité: kgCO2/kcal
+  formule: 8.84 / 2500
+
+## ALIMENTATION / CLUB
+
+pratique . alimentation . séance club:
+  formule: par séance * pratique . club . nb entrainements * constantes . nb semaines pratique + par séance * pratique . futsal . nb entrainements * constantes . nb semaines pratique + pratique . club . nb matches * constantes . nb mois pratique + pratique . futsal . matches * constantes . nb mois pratique
+
+pratique . alimentation . séance club . par séance:
+  unité: kgCO2e
+  applicable si: 
+    une de ces conditions:
+      - pratique . futsal . présent
+      - pratique . club . présent
+      - pratique . international . présent
+  formule:
+    somme:
+      - barres
+      - boissons
+      - fruits
+      - sodas
+      - alcool
+
+##
+
+pratique . alimentation . séance club . barres:
+  titre: Barres (kg)
+  icônes: 🍫
+  formule: constantes . alimentation . barres * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance club . barres . nombre:
+  question: Barres (kg)
+  par défaut: 0
+
+  ##
+
+pratique . alimentation . séance club . boissons:
+  icônes: 🧃
+  titre: Boisson énergétique (L)
+  formule: constantes . boissons . boissons * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance club . boissons . nombre:
+  question: Boisson énergétique (L)
+  par défaut: 0.5
+  unité: L
+
+  ##
+
+pratique . alimentation . séance club . fruits:
+  icônes: 🍎🍐🍊
+  titre: Fruits
+  formule: constantes . alimentation . fruits * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance club . fruits . nombre:
+  question: Fruits
+  par défaut: 2
+
+  ##
+
+pratique . alimentation . séance club . sodas:
+  icônes: 🥤
+  titre: Sodas (L)
+  formule: constantes . boissons . sodas * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance club . sodas . nombre:
+  question: Sodas (L)
+  par défaut: 0
+  unité: L
+
+  ##
+
+pratique . alimentation . séance club . alcool:
+  icônes: 🍺🍷
+  titre: 'Alcool : bière, vin, etc. (L)'
+  formule: constantes . boissons . alcool * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance club . alcool . nombre:
+  question: 'Alcool : bière, vin, etc. (L)'
+  par défaut: 0.25
+  unité: L
+
+
+## ALIMENTATION / LOISIR
+
+pratique . alimentation . séance loisir:
+  formule: par séance * pratique . loisir . nombre déplacements pratique * constantes . nb mois pratique
+
+pratique . alimentation . séance loisir . par séance:
+  applicable si: pratique . loisir . présent
+  formule:
+    somme:
+      - barres
+      - boissons
+      - fruits
+      - sodas
+      - alcool
+
+##
+
+pratique . alimentation . séance loisir . barres:
+  titre: Barres (kg)
+  icônes: 🍫
+  formule: constantes . alimentation . barres * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance loisir . barres . nombre:
+  question: Barres (kg)
+  par défaut: 0.1
+
+  ##
+
+pratique . alimentation . séance loisir . boissons:
+  icônes: 🧃
+  titre: Boisson énergétique (L)
+  formule: constantes . boissons . boissons * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance loisir . boissons . nombre:
+  question: Boisson énergétique (L)
+  par défaut: 0
+  unité: L
+
+  ##
+
+pratique . alimentation . séance loisir . fruits:
+  icônes: 🍎🍐🍊
+  titre: Fruits
+  formule: constantes . alimentation . fruits * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance loisir . fruits . nombre:
+  question: Fruits
+  par défaut: 1
+
+##
+
+pratique . alimentation . séance loisir . eau en bouteille:
+  icônes: 🥤
+  titre: Eau en bouteille (L)
+  formule: constantes . boissons . eau en bouteille * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance loisir . eau en bouteille . nombre:
+  question: Eau en bouteille (L)
+  par défaut: 0
+  unité: L
+
+  ##
+
+pratique . alimentation . séance loisir . sodas:
+  icônes: 🥤
+  titre: Sodas (L)
+  formule: constantes . boissons . sodas * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance loisir . sodas . nombre:
+  question: Sodas (L)
+  par défaut: 0.5
+  unité: L
+
+  ##
+
+pratique . alimentation . séance loisir . alcool:
+  icônes: 🍺🍷
+  titre: 'Alcool : bière, vin, etc. (L)'
+  formule: constantes . boissons . alcool * nombre
+  unité: kgCO2e
+
+pratique . alimentation . séance loisir . alcool . nombre:
+  question: 'Alcool : bière, vin, etc. (L)'
+  par défaut: 0.5
+  unité: L

@@ -1,0 +1,197 @@
+equipements:
+  abbréviation: equip.
+  description: |
+
+  couleur: '#20245C'
+  icônes: 🏘
+  applicable si: 
+    une de ces conditions:
+      - pratique . loisir . présent
+      - pratique . futsal . présent
+      - pratique . club . présent
+      - pratique . international . présent
+  formule:
+    somme: 
+      - matériel * matériel . coefficient achat matériel * matériel . coefficient effort matériel
+  unité: kgCO2e
+
+# Effort Matériel
+
+equipements . matériel . coefficient effort matériel:
+  formule:
+    variations: 
+      - si: effort = 'faible effort'
+        alors: effort faible
+      - si: effort = 'Moyen'
+        alors: effort moyen
+      - si: effort = 'Maximum'
+        alors: effort maximum
+
+equipements . matériel . coefficient effort matériel . effort faible:
+  formule: 1.5
+
+equipements . matériel . coefficient effort matériel . effort moyen:
+  formule: 1
+
+equipements . matériel . coefficient effort matériel . effort maximum:
+  formule: 0.75
+
+equipements . matériel . coefficient effort matériel . effort:
+  question: Quel effort faites-vous pour garder votre matériel le plus longtemps possible ?
+  par défaut: "'Moyen'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - faible effort
+        - Moyen
+        - Maximum
+      par défaut: Moyen
+
+equipements . matériel . coefficient effort matériel . effort . faible effort:
+  titre: Peu d'efforts
+equipements . matériel . coefficient effort matériel . effort . Moyen:
+equipements . matériel . coefficient effort matériel . effort . Maximum:
+
+# Achat Matériel
+
+equipements . matériel . coefficient achat matériel:
+  formule:
+    variations: 
+      - si: type = 'acheté neuf'
+        alors:
+          valeur: 1.3
+      - si: type = 'achat occasion'
+        alors:
+          valeur: 0.5
+      - si: type = 'récupéré'
+        alors:
+          valeur: 0.2
+      - si: type = 'loué'
+        alors:
+          valeur: 0.25
+
+equipements . matériel . coefficient achat matériel . type:
+  question: 'En général le matériel que vous utilisez est :'
+  par défaut: "'acheté neuf'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - acheté neuf
+        - achat occasion
+        - récupéré
+        - loué
+      par défaut: acheté neuf
+
+equipements . matériel . coefficient achat matériel . type . acheté neuf:
+equipements . matériel . coefficient achat matériel . type . achat occasion:
+  titre: acheté d'occasion
+equipements . matériel . coefficient achat matériel . type . récupéré:
+equipements . matériel . coefficient achat matériel . type . loué:
+
+# Equipements achetés
+
+equipements . matériel:
+  formule:
+    somme:
+      - maillots
+      - short et collants
+      - chaussures
+      - survêtements
+      - sous-vêtements
+      - manteaux
+      - matériel de récupération électrique
+      - ballons
+  unité: kgCO2e
+
+##
+
+equipements . matériel . maillots:
+  icônes: 👕
+  formule: constantes . equipements . maillots * nombre
+  unité: kgCO2e
+
+equipements . matériel . maillots . nombre:
+  question: Maillots ?
+  par défaut: 2
+
+##
+
+equipements . matériel . short et collants:
+  icônes: 🩳
+  formule: constantes . equipements . short et collants * nombre
+  unité: kgCO2e
+
+equipements . matériel . short et collants . nombre:
+  question: Shorts et collants ?
+  par défaut: 2
+
+##
+
+equipements . matériel . chaussures:
+  icônes: 👟
+  formule: constantes . equipements . chaussures * nombre
+  unité: kgCO2e
+
+equipements . matériel . chaussures . nombre:
+  question: Paire de chaussures ?
+  par défaut: 1
+
+##
+
+equipements . matériel . survêtements:
+  icônes: 🦺👖
+  formule: constantes . equipements . survêtements * nombre
+  unité: kgCO2e
+
+equipements . matériel . survêtements . nombre:
+  question: Survêtements ?
+  par défaut: 1
+
+##
+
+equipements . matériel . sous-vêtements:
+  icônes: 👟🩲
+  formule: constantes . equipements . sous-vêtements * nombre
+  unité: kgCO2e
+
+equipements . matériel . sous-vêtements . nombre:
+  question: Sous-vêtements ?
+  par défaut: 3
+
+##
+
+equipements . matériel . manteaux:
+  icônes: 🧥
+  formule: constantes . equipements . manteaux * nombre
+  unité: kgCO2e
+
+equipements . matériel . manteaux . nombre:
+  question: Manteaux ?
+  par défaut: 1
+
+##
+
+equipements . matériel . matériel de récupération électrique:
+  icônes: 🔌
+  formule: constantes . equipements . matériel de récupération électrique * nombre
+  unité: kgCO2e
+
+equipements . matériel . matériel de récupération électrique . nombre:
+  question: Matériel de récupération électrique (électrostimulateur, pistolet de massage, etc.)  ?
+  par défaut: 0
+
+##
+
+equipements . matériel . ballons:
+  icônes: ⚽️
+  formule: constantes . equipements . ballons * nombre
+  unité: kgCO2e
+
+equipements . matériel . ballons . nombre:
+  question: Ballons ?
+  par défaut: 1
+
+##
+
