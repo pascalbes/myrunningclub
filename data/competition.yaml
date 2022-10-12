@@ -1,0 +1,224 @@
+competition:
+  titre: competition
+  abbréviation: comp
+  description: |
+    
+  couleur: '#2B6DB1'
+  icônes: 🏘
+  formule:
+    somme:
+      - international
+      # - regional
+  unité: kgCO2e
+
+
+############
+## Cadrage
+############
+
+competition . type:
+  question: On what scale are you competing ? (outside of the Frankfurt Marathon)
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - international
+        - regional
+        - no competition
+
+competition . type . international:
+  titre: Internationally and nationally
+competition . type . regional:
+  titre: Regionally
+competition . type . no competition:
+  titre: No competition
+
+###########################################################
+############### international
+###########################################################
+
+competition . international:
+  applicable si: competition . type = 'international'
+  formule:
+    somme:
+      - accommodation
+      - events
+      - transport
+
+
+#################
+#### accomodation
+#################
+
+competition . international . accommodation:
+  formule: nb nights * 23
+  unité: kgCO2e
+
+competition . international . accommodation . nb nights:
+  question: In total, in a year, how many nights do you spend on international or national competitions ?
+  par défaut: 0
+  unité: days
+
+#################
+#### events
+#################
+
+competition . international . events:
+  unité: kgCO2e
+  formule:
+    somme:
+      - outdoor mid to long
+      - trail
+      - outdoor tranck and field
+      - indoor
+
+## outdoor mid to long
+
+competition . international . events . outdoor mid to long:
+  titre: Outdoor mid to long distance competition
+  formule: 10 * number
+  unité: kgCO2e
+
+competition . international . events . outdoor mid to long . number:
+  question: Outdoor mid to long distance competition
+  par défaut: 0
+
+## trail
+
+competition . international . events . trail:
+  titre: Trail running competition
+  formule: 10 * number
+  unité: kgCO2e
+
+competition . international . events . trail . number:
+  question: Trail running competition
+  par défaut: 0
+
+## outdoor tranck and field
+
+competition . international . events . outdoor tranck and field:
+  titre: Outdoor track and field meeting
+  formule: 10 * number
+  unité: kgCO2e
+
+competition . international . events . outdoor tranck and field . number:
+  question: Outdoor track and field meeting
+  par défaut: 0
+
+## indoor
+
+competition . international . events . indoor:
+  titre: Indoor track and field meeting
+  formule: 10 * number
+  unité: kgCO2e
+
+competition . international . events . indoor . number:
+  question: Indoor track and field meeting
+  par défaut: 0
+
+
+#################
+#### transport
+#################
+
+competition . international . transport:
+  unité: kgCO2e
+  formule:
+    somme:
+      - voiture élec
+      - voiture thermique
+      - covoiturage thermique
+      - covoiturage elec
+      - transports en commun
+      - deux-roues motorisé
+      - train
+      - plane
+
+
+## Voiture Elec
+
+competition . international . transport . voiture élec:
+  titre: Individual car (electric)
+  formule: constantes . empreinte transport . voiture élec * hours
+  unité: kgCO2e
+
+competition . international . transport . voiture élec . hours:
+  question: Individual car (electric)
+  par défaut: 0
+
+# ## Voiture thermique
+
+competition . international . transport . voiture thermique:
+  titre: Individual car (thermal)
+  formule: constantes . empreinte transport . voiture thermique * hours
+  unité: kgCO2e
+
+competition . international . transport . voiture thermique . hours:
+  question: Individual car (thermal)
+  par défaut: 0
+
+## Covoiturage
+
+competition . international . transport . covoiturage thermique:
+  titre: Car sharing (thermal)
+  formule: constantes . empreinte transport . covoiturage thermique * hours
+  unité: kgCO2e
+
+competition . international . transport . covoiturage thermique . hours:
+  question: Car sharing (thermal)
+  par défaut: 0
+
+## Covoiturage
+
+competition . international . transport . covoiturage elec:
+  titre: Car sharing (electric)
+  formule: constantes . empreinte transport . covoiturage elec * hours
+  unité: kgCO2e
+
+competition . international . transport . covoiturage elec . hours:
+  question: Car sharing (electric)
+  par défaut: 0
+
+## Public transport
+
+competition . international . transport . transports en commun:
+  titre: Public transport
+  formule: constantes . empreinte transport . transports en commun * hours
+  unité: kgCO2e
+
+competition . international . transport . transports en commun . hours:
+  question: Public transport
+  par défaut: 0
+
+## Deux-roues motorisé
+
+competition . international . transport . deux-roues motorisé:
+  titre: Motorcycle
+  formule: constantes . empreinte transport . deux-roues motorisé * hours
+  unité: kgCO2e
+
+competition . international . transport . deux-roues motorisé . hours:
+  question: Motorcycle
+  par défaut: 0
+
+## Train
+
+competition . international . transport . train:
+  titre: Train
+  formule: constantes . empreinte transport . train * hours
+  unité: kgCO2e
+
+competition . international . transport . train . hours:
+  question: Train
+  par défaut: 0
+
+## Plane
+
+competition . international . transport . plane:
+  titre: Plane
+  formule: constantes . empreinte transport . plane * hours
+  unité: kgCO2e
+
+competition . international . transport . plane . hours:
+  question: Plane
+  par défaut: 0

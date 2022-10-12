@@ -16,10 +16,11 @@ bilan:
 
   formule: 
     somme: 
-      - pratique
-      - crosstraining
-      - food
-      - equipements
+      - competition
+      # - pratique
+      # - crosstraining
+      # - food
+      # - equipements
       # - spectateur
       # - virtuel
       

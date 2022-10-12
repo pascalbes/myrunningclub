@@ -12,21 +12,6 @@ crosstraining:
   unité: kgCO2e
 
 
-# pratique . types . cycling:
-#   titre: Cycling
-#   formule: 0
-#   unité: kgCO2e
-
-# pratique . types . cycling . présent:
-#   par défaut: non
-
-# pratique . types . cross-country:
-#   titre: Mid distance running (outdoor track and field)
-#   unité: kgCO2e
-
-# pratique . types . cross-country . présent:
-#   par défaut: non
-
 ############
 ## Gym
 ############
