@@ -1,0 +1,283 @@
+crosstraining:
+  titre: cross-training
+  abbréviation: cross
+  description: |
+    
+  couleur: '#2B6DB1'
+  icônes: 🏘
+  formule:
+    somme:
+      - gym
+      - winter
+  unité: kgCO2e
+
+
+# pratique . types . cycling:
+#   titre: Cycling
+#   formule: 0
+#   unité: kgCO2e
+
+# pratique . types . cycling . présent:
+#   par défaut: non
+
+# pratique . types . cross-country:
+#   titre: Mid distance running (outdoor track and field)
+#   unité: kgCO2e
+
+# pratique . types . cross-country . présent:
+#   par défaut: non
+
+############
+## Gym
+############
+
+crosstraining . gym:
+  formule:
+    somme:
+      - training
+      - transport
+  applicable si: présent
+
+crosstraining . gym . présent:
+  question: Gym
+  par défaut: non
+
+## training gym
+#########
+
+crosstraining . gym . training:
+  formule: duration * constantes . contexte . gym
+
+crosstraining . gym . training . duration:
+  question: On average, how long do you spend in the gym in a month ?
+  par défaut: 0
+  unité: hours
+
+## transport gym
+#########
+
+crosstraining . gym . transport:
+  formule: empreinte transport * 12
+  unité: kgCO2e
+
+crosstraining . gym . transport . empreinte transport:
+  unité: kgCO2e/training
+  formule:
+    somme:
+      - doux
+      - voiture élec
+      - voiture thermique
+      - covoiturage thermique
+      - covoiturage elec
+      - transports en commun
+      - deux-roues motorisé
+
+
+## Marche
+
+crosstraining . gym . transport . empreinte transport . doux:
+  titre: Bike, scooter, feet
+  formule: constantes . empreinte transport . doux * hours
+  unité: kgCO2e
+
+crosstraining . gym . transport . empreinte transport . doux . hours:
+  question: Bike, scooter, feet
+  par défaut: 0
+
+## Voiture Elec
+
+crosstraining . gym . transport . empreinte transport . voiture élec:
+  titre: Individual car (electric)
+  formule: constantes . empreinte transport . voiture élec * hours
+  unité: kgCO2e
+
+crosstraining . gym . transport . empreinte transport . voiture élec . hours:
+  question: Individual car (electric)
+  par défaut: 0
+
+# ## Voiture thermique
+
+crosstraining . gym . transport . empreinte transport . voiture thermique:
+  titre: Individual car (thermal)
+  formule: constantes . empreinte transport . voiture thermique * hours
+  unité: kgCO2e
+
+crosstraining . gym . transport . empreinte transport . voiture thermique . hours:
+  question: Individual car (thermal)
+  par défaut: 0
+
+## Covoiturage
+
+crosstraining . gym . transport . empreinte transport . covoiturage thermique:
+  titre: Car sharing (thermal)
+  formule: constantes . empreinte transport . covoiturage thermique * hours
+  unité: kgCO2e
+
+crosstraining . gym . transport . empreinte transport . covoiturage thermique . hours:
+  question: Car sharing (thermal)
+  par défaut: 0
+
+## Covoiturage
+
+crosstraining . gym . transport . empreinte transport . covoiturage elec:
+  titre: Car sharing (electric)
+  formule: constantes . empreinte transport . covoiturage elec * hours
+  unité: kgCO2e
+
+crosstraining . gym . transport . empreinte transport . covoiturage elec . hours:
+  question: Car sharing (electric)
+  par défaut: 0
+
+## Transports en commun
+
+crosstraining . gym . transport . empreinte transport . transports en commun:
+  titre: Public transport
+  formule: constantes . empreinte transport . transports en commun * hours
+  unité: kgCO2e
+
+crosstraining . gym . transport . empreinte transport . transports en commun . hours:
+  question: Public transport
+  par défaut: 0
+
+## Deux-roues motorisé
+
+crosstraining . gym . transport . empreinte transport . deux-roues motorisé:
+  titre: Motorcycle
+  formule: constantes . empreinte transport . deux-roues motorisé * hours
+  unité: kgCO2e
+
+crosstraining . gym . transport . empreinte transport . deux-roues motorisé . hours:
+  question: Motorcycle
+  par défaut: 0
+
+
+############
+## Ski
+############
+
+
+crosstraining . ski:
+
+crosstraining . ski . présent:
+  question: Ski moutaineering
+  par défaut: non
+
+############
+## cross-country
+############
+
+
+crosstraining . cross-country:
+
+crosstraining . cross-country . présent:
+  question: cross-country
+  par défaut: non
+
+## winter season transport
+#########
+
+crosstraining . winter:
+  applicable si: 
+    une de ces conditions:
+      - crosstraining . cross-country . présent
+      - crosstraining . ski . présent
+  formule: transport
+
+crosstraining . winter . transport:
+  formule: empreinte transport
+  unité: kgCO2e
+
+crosstraining . winter . transport . empreinte transport:
+  unité: kgCO2e/training
+  formule:
+    somme:
+      - doux
+      - voiture élec
+      - voiture thermique
+      - covoiturage thermique
+      - covoiturage elec
+      - transports en commun
+      - deux-roues motorisé
+
+
+## Marche
+
+crosstraining . winter . transport . empreinte transport . doux:
+  titre: Bike, scooter, feet
+  formule: constantes . empreinte transport . doux * hours
+  unité: kgCO2e
+
+crosstraining . winter . transport . empreinte transport . doux . hours:
+  question: Bike, scooter, feet
+  par défaut: 0
+
+## Voiture Elec
+
+crosstraining . winter . transport . empreinte transport . voiture élec:
+  titre: Individual car (electric)
+  formule: constantes . empreinte transport . voiture élec * hours
+  unité: kgCO2e
+
+crosstraining . winter . transport . empreinte transport . voiture élec . hours:
+  question: Individual car (electric)
+  par défaut: 0
+
+# ## Voiture thermique
+
+crosstraining . winter . transport . empreinte transport . voiture thermique:
+  titre: Individual car (thermal)
+  formule: constantes . empreinte transport . voiture thermique * hours
+  unité: kgCO2e
+
+crosstraining . winter . transport . empreinte transport . voiture thermique . hours:
+  question: Individual car (thermal)
+  par défaut: 0
+
+## Covoiturage
+
+crosstraining . winter . transport . empreinte transport . covoiturage thermique:
+  titre: Car sharing (thermal)
+  formule: constantes . empreinte transport . covoiturage thermique * hours
+  unité: kgCO2e
+
+crosstraining . winter . transport . empreinte transport . covoiturage thermique . hours:
+  question: Car sharing (thermal)
+  par défaut: 0
+
+## Covoiturage
+
+crosstraining . winter . transport . empreinte transport . covoiturage elec:
+  titre: Car sharing (electric)
+  formule: constantes . empreinte transport . covoiturage elec * hours
+  unité: kgCO2e
+
+crosstraining . winter . transport . empreinte transport . covoiturage elec . hours:
+  question: Car sharing (electric)
+  par défaut: 0
+
+## Transports en commun
+
+crosstraining . winter . transport . empreinte transport . transports en commun:
+  titre: Public transport
+  formule: constantes . empreinte transport . transports en commun * hours
+  unité: kgCO2e
+
+crosstraining . winter . transport . empreinte transport . transports en commun . hours:
+  question: Public transport
+  par défaut: 0
+
+## Deux-roues motorisé
+
+crosstraining . winter . transport . empreinte transport . deux-roues motorisé:
+  titre: Motorcycle
+  formule: constantes . empreinte transport . deux-roues motorisé * hours
+  unité: kgCO2e
+
+crosstraining . winter . transport . empreinte transport . deux-roues motorisé . hours:
+  question: Motorcycle
+  par défaut: 0
+
+
+
+
+

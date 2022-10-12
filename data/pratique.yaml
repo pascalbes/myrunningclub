@@ -17,73 +17,35 @@ pratique:
 
 ## Pratique running
 
-# pratique . running:
-#   formule:
-#     somme:
-#       - long distance
-#       - mid distance outdoor
-#       - mid distance indoor
+pratique . running:
+  formule:
+    somme:
+      - long distance
+      - mid distance outdoor
+      - mid distance indoor
 
-# pratique . running . long distance:
-#   titre: Off-stage running (mid to long distance road running, cross-country, trail running, etc.)
-#   formule: 0
-#   unité: kgCO2e
+pratique . running . long distance:
+  titre: Off-stage running (mid to long distance road running, cross-country, trail running, etc.)
+  formule: 0
+  unité: kgCO2e
 
-# pratique . running . long distance . présent:
-#   par défaut: non
+pratique . running . long distance . présent:
+  par défaut: non
 
-# pratique . running . mid distance outdoor:
-#   titre: Mid distance running (outdoor track and field)
-#   unité: kgCO2e
+pratique . running . mid distance outdoor:
+  titre: Mid distance running (outdoor track and field)
+  unité: kgCO2e
 
-# pratique . running . mid distance outdoor . présent:
-#   par défaut: non
+pratique . running . mid distance outdoor . présent:
+  par défaut: non
 
-# pratique . running . mid distance indoor:
-#   titre: Mid distance running (indoor track and field)
-#   unité: kgCO2e
+pratique . running . mid distance indoor:
+  titre: Mid distance running (indoor track and field)
+  unité: kgCO2e
 
-# pratique . running . mid distance indoor . présent:
-#   par défaut: non
+pratique . running . mid distance indoor . présent:
+  par défaut: non
 
-# ## Pratique other
-
-# pratique . other:
-#   formule:
-#     somme:
-#       - cycling
-#       - cross-country
-#       - ski
-#       - gym
-
-# pratique . other . cycling:
-#   titre: Cycling
-#   formule: 0
-#   unité: kgCO2e
-
-# pratique . other . cycling . présent:
-#   par défaut: non
-
-# pratique . other . cross-country:
-#   titre: Mid distance running (outdoor track and field)
-#   unité: kgCO2e
-
-# pratique . other . cross-country . présent:
-#   par défaut: non
-
-# pratique . other . ski:
-#   titre: Ski moutaineering
-#   unité: kgCO2e
-
-# pratique . other . ski . présent:
-#   par défaut: non
-
-# pratique . other . gym:
-#   titre: Gym
-#   unité: kgCO2e
-
-# pratique . other . gym . présent:
-#   par défaut: non
 
 
 #########
@@ -96,8 +58,8 @@ pratique . training:
   unité: kgCO2e
   formule:
     somme:
-      # - daily
-      # - exceptional
+      - daily
+      - exceptional
       - training camp
 
 #########
@@ -226,7 +188,7 @@ pratique . training . training camp . transport . plane . hours:
 #########
 
 pratique . training . daily:
-  formule: nb trainings * empreinte transport * empreinte lieu * 365
+  formule: nb trainings * empreinte transport * empreinte lieu * 365 / 7
   unité: kgCO2e
 
 pratique . training . daily . nb trainings:

@@ -1,0 +1,64 @@
+food:
+  titre: food
+  abbréviation: Alim.
+  description: |
+    
+  couleur: '#2B6DB1'
+  icônes: 🏘
+  formule:
+    somme:
+      - training * pratique . training . daily . nb trainings * 365 / 7
+  unité: kgCO2e
+
+############
+## BOISSONS
+############
+
+food . training:
+  formule:
+    somme: 
+      - energy bars
+      - energy drinks
+      - fruits
+      - water bottle
+
+
+## energy bars
+
+food . training . energy bars:
+  titre: Energy bars / gels
+  formule: constantes . food . energy bars * number
+  unité: kgCO2e
+food . training . energy bars . number:
+  question: Energy bars / gels
+  par défaut: 0
+  
+## energy drinks
+
+food . training . energy drinks:
+  titre: Energy drink
+  formule: constantes . food . energy drinks * number
+  unité: kgCO2e
+food . training . energy drinks . number:
+  question: Energy drink
+  par défaut: 0
+  
+## fruits
+
+food . training . fruits:
+  titre: Fruits
+  formule: constantes . food . fruits * number
+  unité: kgCO2e
+food . training . fruits . number:
+  question: Fruits
+  par défaut: 0
+  
+## water bottle
+
+food . training . water bottle:
+  titre: Water bottle
+  formule: constantes . food . water bottle * number
+  unité: kgCO2e
+food . training . water bottle . number:
+  question: Water bottle
+  par défaut: 0
