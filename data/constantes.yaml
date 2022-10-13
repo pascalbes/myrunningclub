@@ -250,6 +250,9 @@ constantes . food . energy drinks:
 constantes . food . water bottle:
   formule: 0.284
   unité: kgCO2e
+constantes . food . prerace cake:
+  formule: 0.284
+  unité: kgCO2e
 
 ## Boissons
 

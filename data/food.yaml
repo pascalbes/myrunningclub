@@ -1,16 +1,72 @@
 food:
   titre: food
-  abbréviation: Alim.
+  abbréviation: Food
   description: |
     
   couleur: '#2B6DB1'
   icônes: 🏘
-  formule:
-    somme:
-      - training * pratique . training . daily . nb trainings * 365 / 7
   unité: kgCO2e
+  formule:
+    variations: 
+      - si: type repas = 'vegan'
+        alors: calories * empreinte vegan * 365
+      - si: type repas = 'vegetarian'
+        alors: calories * empreinte vegetarian * 365
+      - si: type repas = 'flexitarian'
+        alors: calories * empreinte flexitarian * 365
+      - si: type repas = 'classical'
+        alors: calories * empreinte classical * 365
+      - si: type repas = 'carnivore'
+        alors: calories * empreinte carnivore * 365
+      - sinon: calories * empreinte classical * 365
 
-############
-## training
-############
 
+food . type repas:
+  question: Which diet are you on ?
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - vegan
+        - vegetarian
+        - flexitarian
+        - classical
+        - carnivore
+  par défaut: classical
+
+
+food . type repas . vegan:
+food . type repas . vegetarian:
+food . type repas . flexitarian:
+food . type repas . classical: oui
+food . type repas . carnivore:
+
+food . calories:
+  question: Compared to a person of your size and gender, how many more Kcal do you eat daily ?
+  suggestions: 
+    normal: 0
+    légèrement plus: 200
+    beaucoup plus: 800
+    régime de champion: 1500
+  unité: kcal
+  par défaut: 200
+
+food . empreinte vegan:
+  unité: kgCO2/kcal
+  formule: 0.98 / 2500
+
+food . empreinte vegetarian:
+  unité: kgCO2/kcal
+  formule: 1.76 / 2500
+
+food . empreinte flexitarian:
+  unité: kgCO2/kcal
+  formule: 2.86 / 2500
+
+food . empreinte classical:
+  unité: kgCO2/kcal
+  formule: 4.53 / 2500
+
+food . empreinte carnivore:
+  unité: kgCO2/kcal
+  formule: 8.84 / 2500
