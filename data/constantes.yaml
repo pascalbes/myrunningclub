@@ -95,49 +95,49 @@ constantes . numérique . actualités . jamais:
   formule: 0
   unité: kgCO2e
 
-## Equipements
+## equipement
 
-constantes . equipements:
-constantes . equipements . echarpes:
+constantes . equipement:
+constantes . equipement . echarpes:
   formule: 1.6
   unité: kgCO2e
-constantes . equipements . maillots:
+constantes . equipement . maillots:
   formule: 5.5
   unité: kgCO2e
-constantes . equipements . petits équipements:
+constantes . equipement . petits équipements:
   formule: 2.156
   unité: kgCO2e
-constantes . equipements . short et collants:
+constantes . equipement . short et collants:
   formule: 0.8
   unité: kgCO2e
-constantes . equipements . chaussures:
+constantes . equipement . chaussures:
   formule: 18.7
   unité: kgCO2e
-constantes . equipements . survêtements:
+constantes . equipement . survêtements:
   formule: 31.5
   unité: kgCO2e
-constantes . equipements . sous-vêtements:
+constantes . equipement . sous-vêtements:
   formule: 0.3
   unité: kgCO2e
-constantes . equipements . manteaux:
+constantes . equipement . manteaux:
   formule: 85.8
   unité: kgCO2e
-constantes . equipements . trousers:
+constantes . equipement . trousers:
   formule: 16.5
   unité: kgCO2e
-constantes . equipements . accessories:
+constantes . equipement . accessories:
   formule: 4.12
   unité: kgCO2e
-constantes . equipements . recovery:
+constantes . equipement . recovery:
   formule: 4.12
   unité: kgCO2e
-constantes . equipements . clockwatch:
+constantes . equipement . clockwatch:
   formule: 4.12
   unité: kgCO2e
-constantes . equipements . gps watch:
+constantes . equipement . gps watch:
   formule: 4.12
   unité: kgCO2e
-constantes . equipements . treadmill:
+constantes . equipement . treadmill:
   formule: 4.12
   unité: kgCO2e
 
@@ -213,10 +213,10 @@ constantes . empreinte transport . plane heure:
   unité: kgCO2e
 
 constantes . empreinte transport . car:
-  formule: 0.218 ## à confirmer
+  formule: training . car . footprint by hour
   unité: kgCO2e
 constantes . empreinte transport . car heure:
-  formule: 0.218 ## à confirmer
+  formule: training . car . footprint by hour
   unité: kgCO2e
 
 constantes . empreinte transport . minibus:

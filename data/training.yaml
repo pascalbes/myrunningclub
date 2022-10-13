@@ -1,0 +1,461 @@
+training:
+  abbréviation: prat.
+  description: |
+    
+  couleur: '#2B6DB1'
+  icônes: 🏘
+  formule:
+    somme:
+      - daily
+      - exceptional
+      - training camp
+      - food
+  unité: kgCO2e
+
+
+
+#########
+## training camp
+#########
+
+training . training camp:
+  formule: 
+    somme:
+      - accommodation
+      - transport
+
+## accommodation
+
+training . training camp . accommodation:
+  formule: nb days * 23
+  unité: kgCO2e
+
+training . training camp . accommodation . nb days:
+  question: Outside of specific training for the Frankfurt Marathon, how many days do you spend on training camp each year ?
+  par défaut: 0
+  unité: days
+
+## transport
+
+training . training camp . transport:
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: training . training camp . accommodation . nb days = 0
+        alors: 0
+      - sinon: empreinte
+
+training . training camp . transport . empreinte:   
+  formule:
+    somme:
+      - voiture
+      - deux-roues motorisé
+      - train
+      - plane
+
+
+## Voiture Elec
+
+training . training camp . transport . voiture:
+  titre: Car
+  formule: constantes . empreinte transport . car * hours
+  unité: kgCO2e
+
+training . training camp . transport . voiture . hours:
+  question: Car
+  par défaut: 0
+
+## Deux-roues motorisé
+
+training . training camp . transport . deux-roues motorisé:
+  titre: Motorcycle
+  formule: constantes . empreinte transport . deux-roues motorisé * hours
+  unité: kgCO2e
+
+training . training camp . transport . deux-roues motorisé . hours:
+  question: Motorcycle
+  par défaut: 0
+
+## Train
+
+training . training camp . transport . train:
+  titre: Train
+  formule: constantes . empreinte transport . train * hours
+  unité: kgCO2e
+
+training . training camp . transport . train . hours:
+  question: Train
+  par défaut: 0
+
+## Plane
+
+training . training camp . transport . plane:
+  titre: Plane
+  formule: constantes . empreinte transport . plane * hours
+  unité: kgCO2e
+
+training . training camp . transport . plane . hours:
+  question: Plane
+  par défaut: 0
+
+
+#########
+## transport quotidien
+#########
+
+training . daily:
+  formule: nb trainings * empreinte transport * empreinte lieu * 365 / 7
+  unité: kgCO2e
+
+training . daily . nb trainings:
+  question: On average, how many training sessions do you do in a week ? (outside of sessions further from home/work) ?
+  par défaut: 3
+  unité: training
+
+training . daily . empreinte transport:
+  unité: kgCO2e/training
+  formule:
+    somme:
+      - doux
+      - voiture
+      - transports en commun
+      - deux-roues motorisé
+
+
+## Marche
+
+training . daily . empreinte transport . doux:
+  titre: Bike, scooter, feet
+  formule: constantes . empreinte transport . doux * minutes
+  unité: kgCO2e
+
+training . daily . empreinte transport . doux . minutes:
+  question: Bike, scooter, feet
+  par défaut: 0
+
+## Voiture Elec
+
+training . daily . empreinte transport . voiture:
+  titre: Car
+  formule: constantes . empreinte transport . car * minutes / 60
+  unité: kgCO2e
+
+training . daily . empreinte transport . voiture . minutes:
+  question: Car
+  par défaut: 0
+
+## Transports en commun
+
+training . daily . empreinte transport . transports en commun:
+  titre: Public transport
+  formule: constantes . empreinte transport . transports en commun * minutes
+  unité: kgCO2e
+
+training . daily . empreinte transport . transports en commun . minutes:
+  question: Public transport
+  par défaut: 0
+
+## Deux-roues motorisé
+
+training . daily . empreinte transport . deux-roues motorisé:
+  titre: Motorcycle
+  formule: constantes . empreinte transport . deux-roues motorisé * minutes
+  unité: kgCO2e
+
+training . daily . empreinte transport . deux-roues motorisé . minutes:
+  question: Motorcycle
+  par défaut: 0
+
+
+## empreinte lieu
+#########
+
+training . daily . empreinte lieu:
+  unité: kgCO2e/training
+  formule:
+    somme:
+      - outside
+      - ontrack light
+      - ontrack no light
+
+## Outside
+
+training . daily . empreinte lieu . outside:
+  titre: Outside (offtrack)
+  formule: constantes . empreinte lieu . outside * percentage / 100
+  unité: kgCO2e
+
+training . daily . empreinte lieu . outside . percentage:
+  question: Outside (offtrack)
+  par défaut: 0
+
+## On the track light
+
+training . daily . empreinte lieu . ontrack light:
+  titre: On the track (outdoors, lighted)
+  formule: constantes . empreinte lieu . ontrack light * percentage / 100
+  unité: kgCO2e
+
+training . daily . empreinte lieu . ontrack light . percentage:
+  question: On the track (outdoors, lighted)
+  par défaut: 0
+
+## On the track no light
+
+training . daily . empreinte lieu . ontrack no light:
+  titre: On the track (outdoors, unligthed)
+  formule: constantes . empreinte lieu . ontrack no light * percentage / 100
+  unité: kgCO2e
+
+training . daily . empreinte lieu . ontrack no light . percentage:
+  question: On the track (outdoors, unligthed)
+  par défaut: 0
+
+
+
+#########
+## transport exceptionnel
+#########
+
+training . exceptional:
+  formule: empreinte * 12
+  unité: kgCO2e
+
+training . exceptional . empreinte :
+  unité: kgCO2e
+  formule:
+    somme:
+      - doux
+      - voiture
+      - transports en commun
+      - deux-roues motorisé
+
+
+## Marche
+
+training . exceptional . empreinte . doux:
+  titre: Bike, scooter, feet
+  formule: constantes . empreinte transport . doux * hours
+  unité: kgCO2e
+
+training . exceptional . empreinte . doux . hours:
+  question: Bike, scooter, feet
+  par défaut: 0
+
+## Voiture
+
+training . exceptional . empreinte . voiture:
+  titre: Car
+  formule: constantes . empreinte transport . car * hours
+  unité: kgCO2e
+
+training . exceptional . empreinte . voiture . hours:
+  question: Car
+  par défaut: 0
+
+## Transports en commun
+
+training . exceptional . empreinte . transports en commun:
+  titre: Public transport
+  formule: constantes . empreinte transport . transports en commun * hours
+  unité: kgCO2e
+
+training . exceptional . empreinte . transports en commun . hours:
+  question: Public transport
+  par défaut: 0
+
+## Deux-roues motorisé
+
+training . exceptional . empreinte . deux-roues motorisé:
+  titre: Motorcycle
+  formule: constantes . empreinte transport . deux-roues motorisé * hours
+  unité: kgCO2e
+
+training . exceptional . empreinte . deux-roues motorisé . hours:
+  question: Motorcycle
+  par défaut: 0
+
+################################################################################
+############################# Food
+################################################################################
+
+training . food:
+  formule:
+    somme: 
+      - energy bars
+      - energy drinks
+      - fruits
+      - water bottle
+
+
+## energy bars
+
+training . food . energy bars:
+  titre: Energy bars / gels
+  formule: constantes . food . energy bars * number
+  unité: kgCO2e
+training . food . energy bars . number:
+  question: Energy bars / gels
+  par défaut: 0
+  
+## energy drinks
+
+training . food . energy drinks:
+  titre: Energy drink
+  formule: constantes . food . energy drinks * number
+  unité: kgCO2e
+training . food . energy drinks . number:
+  question: Energy drink
+  par défaut: 0
+  
+## fruits
+
+training . food . fruits:
+  titre: Fruits
+  formule: constantes . food . fruits * number
+  unité: kgCO2e
+training . food . fruits . number:
+  question: Fruits
+  par défaut: 0
+  
+## water bottle
+
+training . food . water bottle:
+  titre: Water bottle
+  formule: constantes . food . water bottle * number
+  unité: kgCO2e
+training . food . water bottle . number:
+  question: Water bottle
+  par défaut: 0
+
+
+
+#########
+## CAR
+#########
+
+training . car: oui
+
+## size
+
+training . car . size:
+  question: What is the car's size ?
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - Small
+        - Middle
+        - Sedan
+        - SUV
+
+training . car . size . Small:
+training . car . size . Middle:
+training . car . size . Sedan:
+training . car . size . SUV:
+
+## type
+
+training . car . type:
+  question: What is the car's type ?
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités:
+        - Thermal
+        - Hybrid
+        - Electric
+
+training . car . type . Thermal:
+  titre: Thermal (gas/diesel)
+training . car . type . Hybrid:
+training . car . type . Electric:
+
+## carpool
+
+training . car . passengers:
+  question: How many persons are there in the car, in average ?
+  par défaut: 2
+  unité: person
+
+## consumption
+
+training . car . consumption:
+  question: What is the average gaz consumption of the car ?
+  par défaut: 5
+  unité: l / 100 km
+
+## footprint
+
+training . car . footprint by hour:
+  unité: kgCO2e/h
+  formule: footprint by km * 50
+
+training . car . footprint by km:
+  unité: kgCO2e/km
+  formule:
+    variations:
+      - si: type = 'Thermal'
+        alors: thermal . footprint by km / passengers
+      - si: type = 'hybride'
+        alors: hybrid . footprint by km / passengers
+      - sinon: electric . footprint by km / passengers
+
+## thermal
+
+training . car . thermal: oui
+
+training . car . thermal . footprint by km:
+  formule: footprint by litre * training . car . consumption / 100
+
+training . car . thermal . footprint by litre:
+  formule:
+    variations:
+      - si: petrol = 'gazole B7 ou B10'
+        alors: (3.1 + 3.04) / 2
+      - si: petrol = 'essence E5 ou E10'
+        alors: 2.7
+      - si: petrol = 'essence E85'
+        alors: 1.11
+  unité: kgCO2e/l
+
+training . car . thermal . petrol:
+  applicable si: type != 'Electric'
+  question: What type of petrol is used ?
+  par défaut: "'essence E5 ou E10'"
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - gazole B7 ou B10
+        - essence E5 ou E10
+        - essence E85
+
+training . car . thermal . petrol . gazole B7 ou B10:
+  titre: Gazole (B7 ou B10)
+training . car . thermal . petrol . essence E5 ou E10:
+  titre: Essence (E5 ou E10)
+training . car . thermal . petrol . essence E85:
+  titre: Essence E85 (biocarburants)
+
+## hybrid
+
+training . car . hybrid: oui
+
+training . car . hybrid . footprint by km:
+  formule: training . car . thermal . footprint by litre * training . car . consumption / 100 * 0.85
+
+## electric
+training . car . electric: oui
+
+training . car . electric . footprint by km:
+  unité: kgCO2e/km
+  formule:
+    variations:
+      - si: training . car . size = 'Small'
+        alors: 0.0159
+      - si: training . car . size = 'Middle'
+        alors: 0.0198
+      - sinon: 0.0273
+
+
