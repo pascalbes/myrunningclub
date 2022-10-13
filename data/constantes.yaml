@@ -213,10 +213,18 @@ constantes . empreinte transport . plane heure:
   unité: kgCO2e
 
 constantes . empreinte transport . car:
-  formule: training . car . footprint by hour
+  formule:
+    variations:
+      - si: training . car = oui
+        alors: training . car . footprint by hour
+      - sinon: 22
   unité: kgCO2e
 constantes . empreinte transport . car heure:
-  formule: training . car . footprint by hour
+  formule:
+    variations:
+      - si: training . car = oui
+        alors: training . car . footprint by hour
+      - sinon: 22
   unité: kgCO2e
 
 constantes . empreinte transport . minibus:

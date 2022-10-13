@@ -1,5 +1,6 @@
 training:
-  abbréviation: prat.
+  titre: Training
+  abbréviation: Train.
   description: |
     
   couleur: '#2B6DB1'
@@ -334,7 +335,9 @@ training . food . water bottle . number:
 ## CAR
 #########
 
-training . car: oui
+training . car:
+  question: Do you use a car to go training or to go on competitions ?
+  par défaut: non
 
 ## size
 
