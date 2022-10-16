@@ -3,6 +3,8 @@ actions:
     somme:
       - training . entrainement vélo plutôt que voiture
       - training . training camp by train
+      - equipement . keep it longer
+      - competition . closer to home
       # - pratique . entrainement transports communs plutôt que voiture
       # - pratique . entrainement covoiturage
       # - pratique . arrêter l'avion

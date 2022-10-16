@@ -16,8 +16,8 @@ bilan:
 
   formule: 
     somme: 
-      - training
-      # - competition
+      # - training
+      - competition
       # - frankfurt
       # - crosstraining
       # - food
