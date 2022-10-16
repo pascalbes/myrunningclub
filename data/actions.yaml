@@ -1,7 +1,8 @@
 actions:
-  formule: 0
-    # somme:
-      # - pratique . entrainement vélo plutôt que voiture
+  formule:
+    somme:
+      - training . entrainement vélo plutôt que voiture
+      - training . training camp by train
       # - pratique . entrainement transports communs plutôt que voiture
       # - pratique . entrainement covoiturage
       # - pratique . arrêter l'avion

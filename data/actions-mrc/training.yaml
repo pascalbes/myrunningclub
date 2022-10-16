@@ -1,0 +1,28 @@
+training . entrainement vélo plutôt que voiture:
+  titre: Bike or walk to your training sessions
+  formule:
+    somme:
+      - training . training camp . transport . voiture
+      - training . training camp . transport . deux-roues motorisé
+      - training . daily . empreinte transport . voiture
+      - training . daily . empreinte transport . deux-roues motorisé
+      - training . exceptional . empreinte . voiture
+      - training . exceptional . empreinte . deux-roues motorisé
+
+  description: |
+    Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au sport réduit notre empreinte climat, mais améliore aussi notre qualité de vie. 70% des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme. En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
+  unité: kgCO2e
+
+training . training camp by train:
+  titre: Chose training camps reachable by train
+  formule: total footprint by plane - total footprint by plane * constantes . empreinte transport . train / constantes . empreinte transport . plane
+
+  description: |
+    Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au sport réduit notre empreinte climat, mais améliore aussi notre qualité de vie. 70% des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme. En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
+  unité: kgCO2e
+
+training . training camp by train . total footprint by plane:
+  formule:
+    somme:
+      - training . training camp . transport . plane
+      - frankfurt . preparation . transport . plane

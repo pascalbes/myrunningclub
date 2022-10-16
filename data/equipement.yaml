@@ -3,7 +3,7 @@ equipement:
   titre: equipment
   description: |
 
-  couleur: '#20245C'
+  couleur: '#093824'
   icônes: 🏘
   formule:
     somme: 

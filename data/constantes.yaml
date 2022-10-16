@@ -199,10 +199,10 @@ constantes . empreinte transport . deux-roues motorisé:
   unité: kgCO2e
 
 constantes . empreinte transport . train:
-  formule: 0.00236
+  formule: 2
   unité: kgCO2e
 constantes . empreinte transport . train heure:
-  formule: 0.00236
+  formule: 2
   unité: kgCO2e
 
 constantes . empreinte transport . plane:

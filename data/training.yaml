@@ -3,7 +3,7 @@ training:
   abbréviation: Train.
   description: |
     
-  couleur: '#2B6DB1'
+  couleur: '#95190C'
   icônes: 🏘
   formule:
     somme:
@@ -171,8 +171,19 @@ training . daily . empreinte transport . deux-roues motorisé . minutes:
 ## empreinte lieu
 #########
 
+variations:
+      - si: type = 'Thermal'
+        alors: thermal . footprint by km / passengers
+
 training . daily . empreinte lieu:
   unité: kgCO2e/training
+  formule:
+    variations:
+      - si: total > 0
+        alors: total
+      - sinon: 1
+
+training . daily . empreinte lieu . total:
   formule:
     somme:
       - outside

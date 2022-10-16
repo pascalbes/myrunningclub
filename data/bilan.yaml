@@ -16,13 +16,12 @@ bilan:
 
   formule: 
     somme: 
-      # - competition
       - training
+      # - competition
       # - frankfurt
       # - crosstraining
       # - food
       # - equipement
-      # - spectateur
       # - digital
       
   références: 

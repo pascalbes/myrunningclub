@@ -1,9 +1,9 @@
 competition:
-  titre: competition
+  titre: Competition
   abbréviation: comp
   description: |
     
-  couleur: '#2B6DB1'
+  couleur: '#D30C7B'
   icônes: 🏘  
   formule:
     somme:
