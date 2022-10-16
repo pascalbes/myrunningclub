@@ -111,58 +111,22 @@ competition . international . transport:
   unité: kgCO2e
   formule:
     somme:
-      - voiture élec
-      - voiture thermique
-      - covoiturage thermique
-      - covoiturage elec
+      - voiture
       - transports en commun
       - deux-roues motorisé
       - train
       - plane
 
 
-## Voiture Elec
+## Voiture
 
-competition . international . transport . voiture élec:
-  titre: Individual car (electric)
-  formule: constantes . empreinte transport . voiture élec * hours
+competition . international . transport . voiture:
+  titre: Car
+  formule: constantes . empreinte transport . car * hours
   unité: kgCO2e
 
-competition . international . transport . voiture élec . hours:
-  question: Individual car (electric)
-  par défaut: 0
-
-# ## Voiture thermique
-
-competition . international . transport . voiture thermique:
-  titre: Individual car (thermal)
-  formule: constantes . empreinte transport . voiture thermique * hours
-  unité: kgCO2e
-
-competition . international . transport . voiture thermique . hours:
-  question: Individual car (thermal)
-  par défaut: 0
-
-## Covoiturage
-
-competition . international . transport . covoiturage thermique:
-  titre: Car sharing (thermal)
-  formule: constantes . empreinte transport . covoiturage thermique * hours
-  unité: kgCO2e
-
-competition . international . transport . covoiturage thermique . hours:
-  question: Car sharing (thermal)
-  par défaut: 0
-
-## Covoiturage
-
-competition . international . transport . covoiturage elec:
-  titre: Car sharing (electric)
-  formule: constantes . empreinte transport . covoiturage elec * hours
-  unité: kgCO2e
-
-competition . international . transport . covoiturage elec . hours:
-  question: Car sharing (electric)
+competition . international . transport . voiture . hours:
+  question: Car
   par défaut: 0
 
 ## Public transport
@@ -296,10 +260,7 @@ competition . regional . transport:
   formule:
     somme:
       - doux
-      - voiture élec
-      - voiture thermique
-      - covoiturage thermique
-      - covoiturage elec
+      - voiture
       - transports en commun
       - deux-roues motorisé
       - train
@@ -315,48 +276,15 @@ competition . regional . transport . doux . hours:
   question: Bike, scooter, feet
   par défaut: 0
 
-## Voiture Elec
+## Voiture
 
-competition . regional . transport . voiture élec:
-  titre: Individual car (electric)
-  formule: constantes . empreinte transport . voiture élec * hours
+competition . regional . transport . voiture:
+  titre: Car
+  formule: constantes . empreinte transport . car * hours
   unité: kgCO2e
 
-competition . regional . transport . voiture élec . hours:
-  question: Individual car (electric)
-  par défaut: 0
-
-# ## Voiture thermique
-
-competition . regional . transport . voiture thermique:
-  titre: Individual car (thermal)
-  formule: constantes . empreinte transport . voiture thermique * hours
-  unité: kgCO2e
-
-competition . regional . transport . voiture thermique . hours:
-  question: Individual car (thermal)
-  par défaut: 0
-
-## Covoiturage
-
-competition . regional . transport . covoiturage thermique:
-  titre: Car sharing (thermal)
-  formule: constantes . empreinte transport . covoiturage thermique * hours
-  unité: kgCO2e
-
-competition . regional . transport . covoiturage thermique . hours:
-  question: Car sharing (thermal)
-  par défaut: 0
-
-## Covoiturage
-
-competition . regional . transport . covoiturage elec:
-  titre: Car sharing (electric)
-  formule: constantes . empreinte transport . covoiturage elec * hours
-  unité: kgCO2e
-
-competition . regional . transport . covoiturage elec . hours:
-  question: Car sharing (electric)
+competition . regional . transport . voiture . hours:
+  question: Car
   par défaut: 0
 
 ## Public transport
