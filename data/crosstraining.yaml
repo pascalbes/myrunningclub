@@ -4,7 +4,7 @@ crosstraining:
   description: |
     
   couleur: '#3A2D32'
-  icônes: 🏘
+  icônes: 🏋️‍♀️ ⛷ 🚴‍♀️
   formule:
     somme:
       - gym
@@ -17,6 +17,7 @@ crosstraining:
 ############
 
 crosstraining . gym:
+  icônes: 🏋️‍♀️
   formule:
     somme:
       - training
@@ -106,9 +107,10 @@ crosstraining . gym . transport . empreinte transport . deux-roues motorisé . h
 
 
 crosstraining . ski:
+  icônes: ⛷
 
 crosstraining . ski . présent:
-  question: Ski moutaineering
+  question: Ski moutaineering 
   par défaut: non
 
 ############
@@ -117,9 +119,10 @@ crosstraining . ski . présent:
 
 
 crosstraining . cross-country:
-
+  icônes: 🏔
+  
 crosstraining . cross-country . présent:
-  question: cross-country
+  question: Cross-country 
   par défaut: non
 
 ## winter season transport

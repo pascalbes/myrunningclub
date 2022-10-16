@@ -4,7 +4,7 @@ competition:
   description: |
     
   couleur: '#D30C7B'
-  icônes: 🏘  
+  icônes: 🥇  
   formule:
     somme:
       - international
@@ -356,6 +356,7 @@ competition . hours:
 
 competition . food . energy bars:
   titre: Energy bars / gels
+  icônes: 🍫
   formule: constantes . food . energy bars * number
   unité: kgCO2e
 competition . food . energy bars . number:
@@ -366,6 +367,7 @@ competition . food . energy bars . number:
 
 competition . food . energy drinks:
   titre: Energy drink
+  icônes: 🥤
   formule: constantes . food . energy drinks * number
   unité: kgCO2e
 competition . food . energy drinks . number:
@@ -376,6 +378,7 @@ competition . food . energy drinks . number:
 
 competition . food . fruits:
   titre: Fruits
+  icônes: 🍎 🍐 🍊
   formule: constantes . food . fruits * number
   unité: kgCO2e
 competition . food . fruits . number:
@@ -386,6 +389,7 @@ competition . food . fruits . number:
 
 competition . food . water bottle:
   titre: Water bottle
+  icônes: 🥛
   formule: constantes . food . water bottle * number
   unité: kgCO2e
 competition . food . water bottle . number:

@@ -4,7 +4,7 @@ food:
   description: |
     
   couleur: '#247BA0'
-  icônes: 🏘
+  icônes: 🍎
   unité: kgCO2e
   formule:
     variations: 

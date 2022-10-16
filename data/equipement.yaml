@@ -4,7 +4,7 @@ equipement:
   description: |
 
   couleur: '#093824'
-  icônes: 🏘
+  icônes: 👟🩲⌚
   formule:
     somme: 
       - matériel * coefficient achat matériel * coefficient effort matériel
@@ -192,7 +192,7 @@ equipement . matériel . textile . manteaux . nombre:
 
 equipement . matériel . textile . trousers:
   titre: Running tights or trousers
-  icônes: 🔌
+  icônes: 👖
   formule: constantes . equipement . trousers * nombre
   unité: kgCO2e
 
@@ -203,7 +203,7 @@ equipement . matériel . textile . trousers . nombre:
 
 equipement . matériel . textile . accessories:
   titre: Other pieces of clothing (hats, gloves, etc.)
-  icônes: ⚽️
+  icônes: 🧣 🧤 🧢
   formule: constantes . equipement . accessories * nombre
   unité: kgCO2e
 
@@ -227,7 +227,6 @@ equipement . matériel . elec:
 
 equipement . matériel . elec . recovery:
   titre: Electrical recovery device
-  icônes: 👕
   formule: constantes . equipement . recovery * nombre
   unité: kgCO2e
 
@@ -239,7 +238,7 @@ equipement . matériel . elec . recovery . nombre:
 
 equipement . matériel . elec . clockwatch:
   titre: Basic clockwatch
-  icônes: 👕
+  icônes: ⌚
   formule: constantes . equipement . clockwatch * nombre
   unité: kgCO2e
 
@@ -251,7 +250,7 @@ equipement . matériel . elec . clockwatch . nombre:
 
 equipement . matériel . elec . gps watch:
   titre: GPS running watch
-  icônes: 👕
+  icônes: ⌚
   formule: constantes . equipement . gps watch * nombre
   unité: kgCO2e
 
@@ -263,7 +262,6 @@ equipement . matériel . elec . gps watch . nombre:
 
 equipement . matériel . elec . treadmill:
   titre: Treadmill
-  icônes: 👕
   formule: constantes . equipement . treadmill * nombre
   unité: kgCO2e
 

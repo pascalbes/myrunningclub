@@ -4,7 +4,7 @@ training:
   description: |
     
   couleur: '#95190C'
-  icônes: 🏘
+  icônes: 🏃
   formule:
     somme:
       - daily
@@ -304,6 +304,7 @@ training . food:
 
 training . food . energy bars:
   titre: Energy bars / gels
+  icônes: 🍫
   formule: constantes . food . energy bars * number
   unité: kgCO2e
 training . food . energy bars . number:
@@ -313,7 +314,8 @@ training . food . energy bars . number:
 ## energy drinks
 
 training . food . energy drinks:
-  titre: Energy drink
+  titre: Energy drink 
+  icônes: 🥤
   formule: constantes . food . energy drinks * number
   unité: kgCO2e
 training . food . energy drinks . number:
@@ -324,6 +326,7 @@ training . food . energy drinks . number:
 
 training . food . fruits:
   titre: Fruits
+  icônes: 🍎 🍐 🍊
   formule: constantes . food . fruits * number
   unité: kgCO2e
 training . food . fruits . number:
@@ -334,6 +337,7 @@ training . food . fruits . number:
 
 training . food . water bottle:
   titre: Water bottle
+  icônes: 🥛
   formule: constantes . food . water bottle * number
   unité: kgCO2e
 training . food . water bottle . number:
