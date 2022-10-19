@@ -32,7 +32,7 @@ training . training camp . accommodation:
   unité: kgCO2e
 
 training . training camp . accommodation . nb days:
-  question: Outside of specific training for the Frankfurt Marathon, how many days do you spend on training camp each year ?
+  question: How many days do you spend in a year on training camps? 
   unité: days
 
 ## transport
@@ -104,7 +104,7 @@ training . training camp . transport . plane . hours:
 #########
 
 training . daily:
-  formule: nb trainings * empreinte transport * empreinte lieu * 365 / 7
+  formule: nb trainings * empreinte transport * empreinte lieu * 365 / 7 / 60 # / 60 as the unit is minutes
   unité: kgCO2e
 
 training . daily . nb trainings:
@@ -133,11 +133,11 @@ training . daily . empreinte transport . doux . minutes:
   question: Bike, scooter, feet
   par défaut: 0
 
-## Voiture Elec
+## Voiture
 
 training . daily . empreinte transport . voiture:
   titre: Car
-  formule: constantes . empreinte transport . car * minutes / 60
+  formule: constantes . empreinte transport . car * minutes
   unité: kgCO2e
 
 training . daily . empreinte transport . voiture . minutes:
@@ -186,40 +186,76 @@ training . daily . empreinte lieu . total:
   formule:
     somme:
       - outside
-      - ontrack light
-      - ontrack no light
+      - ontrack outdoor light
+      - ontrack outdoor unlight
+      - ontrack indoor light
+      - ontrack indoor unlight
+      - treadmill
 
 ## Outside
 
 training . daily . empreinte lieu . outside:
-  titre: Outside (offtrack)
+  titre: Outside - offtrack
   formule: constantes . empreinte lieu . outside * percentage / 100
   unité: kgCO2e
 
 training . daily . empreinte lieu . outside . percentage:
-  question: Outside (offtrack)
+  question: Outside - offtrack
   par défaut: 0
 
-## On the track light
+## ontrack outdoor light
 
-training . daily . empreinte lieu . ontrack light:
+training . daily . empreinte lieu . ontrack outdoor light:
   titre: On the track (outdoors, lighted)
-  formule: constantes . empreinte lieu . ontrack light * percentage / 100
+  formule: constantes . empreinte lieu . ontrack outdoor light * percentage / 100
   unité: kgCO2e
 
-training . daily . empreinte lieu . ontrack light . percentage:
+training . daily . empreinte lieu . ontrack outdoor light . percentage:
   question: On the track (outdoors, lighted)
   par défaut: 0
 
-## On the track no light
+## ontrack outdoor unlight
 
-training . daily . empreinte lieu . ontrack no light:
-  titre: On the track (outdoors, unligthed)
-  formule: constantes . empreinte lieu . ontrack no light * percentage / 100
+training . daily . empreinte lieu . ontrack outdoor unlight:
+  titre: Outdoor track - lighted
+  formule: constantes . empreinte lieu . ontrack outdoor unlight * percentage / 100
   unité: kgCO2e
 
-training . daily . empreinte lieu . ontrack no light . percentage:
-  question: On the track (outdoors, unligthed)
+training . daily . empreinte lieu . ontrack outdoor unlight . percentage:
+  question: Outdoor track - lighted
+  par défaut: 0
+
+## ontrack indoor light
+
+training . daily . empreinte lieu . ontrack indoor light:
+  titre: Indoor track - lighted
+  formule: constantes . empreinte lieu . ontrack indoor light * percentage / 100
+  unité: kgCO2e
+
+training . daily . empreinte lieu . ontrack indoor light . percentage:
+  question: Indoor track - lighted
+  par défaut: 0
+
+## ontrack outdoor unlight
+
+training . daily . empreinte lieu . ontrack indoor unlight:
+  titre: Indoor track - lighted
+  formule: constantes . empreinte lieu . ontrack indoor unlight * percentage / 100
+  unité: kgCO2e
+
+training . daily . empreinte lieu . ontrack indoor unlight . percentage:
+  question: Indoor track - lighted
+  par défaut: 0
+
+## treadmill
+
+training . daily . empreinte lieu . treadmill:
+  titre: Treadmill
+  formule: constantes . empreinte lieu . treadmill * percentage / 100
+  unité: kgCO2e
+
+training . daily . empreinte lieu . treadmill . percentage:
+  question: Treadmill
   par défaut: 0
 
 
@@ -350,13 +386,13 @@ training . food . water bottle . number:
 #########
 
 training . car:
-  question: Do you use a car to go training or to go on competitions ?
+  question: Do you use a car to go training or to racing?
   par défaut: non
 
 ## size
 
 training . car . size:
-  question: What is the car's size ?
+  question: How would you define your car?
   formule: 
     une possibilité: 
       choix obligatoire: oui

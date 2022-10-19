@@ -23,53 +23,7 @@ constantes . contexte . gym:
   formule: 0.067
   unité: kgCO2e
 
-
-## Jeux vidéos
-
-constantes . jeux vidéos:
-
-constantes . jeux vidéos . sorare:
-  formule: 46.92
-  unité: kgCO2e
-constantes . jeux vidéos . simulation hors ligne:
-  formule: 0.0344
-  unité: kgCO2e
-constantes . jeux vidéos . simulation en ligne:
-  formule: 2.034
-  unité: kgCO2e
-
-constantes . jeux vidéos . e sport:
-constantes . jeux vidéos . e sport . plusieurs heures:
-  formule: 2.16
-  unité: kgCO2e
-constantes . jeux vidéos . e sport . ponctuellement:
-  formule: 0.27
-  unité: kgCO2e
-constantes . jeux vidéos . e sport . jamais:
-  formule: 0
-  unité: kgCO2e
-
-
-
-
-## Paris sportifs
-
-constantes . paris:
-constantes . paris . payants:
-  formule: 0.0213
-  unité: kgCO2e
-constantes . paris . amicaux:
-constantes . paris . amicaux . tout le temps:
-  formule: 1.664
-  unité: kgCO2e
-constantes . paris . amicaux . de temps en temps:
-  formule: 0.28
-  unité: kgCO2e
-constantes . paris . amicaux . jamais:
-  formule: 0
-  unité: kgCO2e
-
-## Numérique
+  ## Numérique
 constantes . numérique:
 constantes . numérique . télévision:
   formule: 0.045
@@ -94,7 +48,6 @@ constantes . numérique . actualités . de temps en temps:
 constantes . numérique . actualités . jamais:
   formule: 0
   unité: kgCO2e
-
 ## equipement
 
 constantes . equipement:
@@ -148,10 +101,19 @@ constantes . empreinte lieu:
 constantes . empreinte lieu . outside:
   formule: 0.103
   unité: kgCO2e
-constantes . empreinte lieu . ontrack light:
+constantes . empreinte lieu . ontrack outdoor light:
   formule: 0.103
   unité: kgCO2e
-constantes . empreinte lieu . ontrack no light:
+constantes . empreinte lieu . ontrack outdoor unlight:
+  formule: 0.103
+  unité: kgCO2e
+constantes . empreinte lieu . ontrack indoor light:
+  formule: 0.103
+  unité: kgCO2e
+constantes . empreinte lieu . ontrack indoor unlight:
+  formule: 0.103
+  unité: kgCO2e
+constantes . empreinte lieu . treadmill:
   formule: 0.103
   unité: kgCO2e
 
@@ -162,40 +124,15 @@ constantes . empreinte transport . doux:
   formule: 0
   unité: kgCO2e
 
-constantes . empreinte transport . voiture élec:
-  formule: 0.103
-  unité: kgCO2e
-constantes . empreinte transport . voiture élec heure:
-  formule: 0.103
-  unité: kgCO2e
-
-constantes . empreinte transport . voiture thermique:
-  formule: 0.218
-  unité: kgCO2e
-constantes . empreinte transport . voiture thermique heure:
-  formule: 0.218
-  unité: kgCO2e
-
-constantes . empreinte transport . covoiturage thermique:
-  formule: 0.14568
-  unité: kgCO2e
-constantes . empreinte transport . covoiturage thermique heure:
-  formule: 0.14568
-  unité: kgCO2e
-
-constantes . empreinte transport . covoiturage elec:
-  formule: 0.14568
-  unité: kgCO2e
-constantes . empreinte transport . covoiturage elec heure:
-  formule: 0.14568
-  unité: kgCO2e
-
 constantes . empreinte transport . transports en commun:
-  formule: 0.00329
+  formule: 1.269
+  unité: kgCO2e
+constantes . empreinte transport . transports en commun heure:
+  formule: 1.269
   unité: kgCO2e
 
 constantes . empreinte transport . deux-roues motorisé:
-  formule: 0.0763
+  formule: 8.028
   unité: kgCO2e
 
 constantes . empreinte transport . train:
@@ -217,14 +154,14 @@ constantes . empreinte transport . car:
     variations:
       - si: training . car = oui
         alors: training . car . footprint by hour
-      - sinon: 22
+      - sinon: 13.08 
   unité: kgCO2e
 constantes . empreinte transport . car heure:
   formule:
     variations:
       - si: training . car = oui
         alors: training . car . footprint by hour
-      - sinon: 22
+      - sinon: 13.08
   unité: kgCO2e
 
 constantes . empreinte transport . minibus:
