@@ -108,7 +108,7 @@ training . daily:
   unité: kgCO2e
 
 training . daily . nb trainings:
-  question: On average, how many training sessions do you do in a week ? (outside of sessions further from home/work) ?
+  question: On average, how many training sessions do you do in a week? (apart of sessions further from home/work)
   par défaut: 0
   unité: training
 
@@ -410,7 +410,7 @@ training . car . size . SUV:
 ## type
 
 training . car . type:
-  question: What is the car's type ?
+  question: What is the car's type?
   formule: 
     une possibilité: 
       choix obligatoire: oui
@@ -427,13 +427,13 @@ training . car . type . Electric:
 ## carpool
 
 training . car . passengers:
-  question: How many persons are there in the car, in average ?
+  question: How many persons are there in the car, in average?
   unité: person
 
 ## consumption
 
 training . car . consumption:
-  question: What is the average gaz consumption of the car ?
+  question: What is the average gaz consumption of the car?
   unité: l / 100 km
 
 ## footprint
@@ -472,7 +472,7 @@ training . car . thermal . footprint by litre:
 
 training . car . thermal . petrol:
   applicable si: type != 'Electric'
-  question: What type of petrol is used ?
+  question: What type of petrol is used?
   par défaut: "'essence E5 ou E10'"
   formule:
     une possibilité:

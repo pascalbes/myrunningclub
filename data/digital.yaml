@@ -21,7 +21,7 @@ digital . news:
   unité: kgCO2e
   formule:
     variations: 
-      - si: type = 'keenly'
+      - si: type = 'frequently'
         alors: constantes . numérique . actualités . assidument
       - si: type = 'from time to time'
         alors: constantes . numérique . actualités . de temps en temps
@@ -29,17 +29,17 @@ digital . news:
         alors: constantes . numérique . actualités . jamais
 
 digital . news . type:
-  question: Do you follow the running / ahtletics news ? (online and paper press, social networks)
+  question: Do you follow the running / ahtletics news? (online and paper press, social networks)
   formule: 
     une possibilité: 
       choix obligatoire: oui
       possibilités:
-        - keenly
+        - frequently
         - from time to time
         - never
 
-digital . news . type . keenly:
-  titre: Keenly
+digital . news . type . frequently:
+  titre: Frequently
 digital . news . type . from time to time:
   titre: From time to time
 digital . news . type . never:
@@ -61,7 +61,7 @@ digital . sport network:
         alors: constantes . numérique . actualités . jamais
 
 digital . sport network . type:
-  question: Do you use Strava or a similar network to share your sports activity ?
+  question: Do you use Strava or a similar network to share your sports activity?
   formule: 
     une possibilité: 
       choix obligatoire: oui
@@ -93,7 +93,7 @@ digital . social media:
         alors: constantes . numérique . actualités . jamais
 
 digital . social media . type:
-  question: Do you share your activity on other non specific social media (Instagram, Facebook, etc.) ?
+  question: Do you share your activity on other non specific social media (Instagram, Facebook, etc.)?
   formule: 
     une possibilité: 
       choix obligatoire: oui
@@ -122,7 +122,7 @@ digital . training platform:
       - sinon: 0
 
 digital . training platform . use:
-  question: Do you use a dedicated training planning platform ?
+  question: Do you use a dedicated training planning platform?
 
 
 #################
@@ -132,13 +132,13 @@ digital . training platform . use:
 digital . streaming:
   formule: 
     somme:
-      - running * 10
+      - running * 365 / 7
       - sport events
 
 ## running
 
 digital . streaming . running:
-  question: In a month, how long do you spend streaming running / athletics content on the internet on average ? (meeting or race replays, youtube videos, etc.)
+  question: In a week, how long do you spend streaming running / athletics content on the internet on average? (meeting or race replays, youtube videos, etc.)
   par défaut: 0
   unité: hours
 

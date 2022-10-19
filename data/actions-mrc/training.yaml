@@ -25,7 +25,7 @@ training . training camp by train . total footprint by plane:
   formule:
     somme:
       - training . training camp . transport . plane
-      - frankfurt . preparation . transport . plane
+      # - frankfurt . preparation . transport . plane
 
 equipement . keep it longer:
   titre: Keep you equipment longer

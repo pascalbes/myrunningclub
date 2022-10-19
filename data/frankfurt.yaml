@@ -19,9 +19,9 @@ frankfurt:
 frankfurt . preparation:
   formule:
     somme:
-    - training camp
     - races
-    - transport
+    # - training camp
+    # - transport
   unité: kgCO2e
 
   
@@ -29,13 +29,13 @@ frankfurt . preparation:
 #### training camp
 #################
 
-frankfurt . preparation . training camp:
-  formule: nb days * 25
+# frankfurt . preparation . training camp:
+#   formule: nb days * 25
 
-frankfurt . preparation . training camp . nb days:
-  question: How many days have you spent on training camp specifically for the Frankfurt Marathon ?
-  par défaut: 0
-  unité: days
+# frankfurt . preparation . training camp . nb days:
+#   question: How many days have you spent on training camp specifically for the Frankfurt Marathon?
+#   par défaut: 0
+#   unité: days
 
 #################
 #### races
@@ -45,7 +45,7 @@ frankfurt . preparation . races:
   formule: nb * 25
 
 frankfurt . preparation . races . nb:
-  question: How many preparation races have you participated in ?
+  question: How many preparation races have you participated in?
   par défaut: 0
   unité: races
 
@@ -53,71 +53,71 @@ frankfurt . preparation . races . nb:
 #### transport
 #################
 
-frankfurt . preparation . transport:
-  unité: kgCO2e
-  formule:
-    somme:
-      - voiture
-      - transports en commun
-      - deux-roues motorisé
-      - train
-      - plane
+# frankfurt . preparation . transport:
+#   unité: kgCO2e
+#   formule:
+#     somme:
+#       - voiture
+#       - transports en commun
+#       - deux-roues motorisé
+#       - train
+#       - plane
 
 
-## Voiture Elec
+# ## Voiture Elec
 
-frankfurt . preparation . transport . voiture:
-  titre: Car
-  formule: constantes . empreinte transport . car * hours
-  unité: kgCO2e
+# frankfurt . preparation . transport . voiture:
+#   titre: Car
+#   formule: constantes . empreinte transport . car * hours
+#   unité: kgCO2e
 
-frankfurt . preparation . transport . voiture . hours:
-  question: Car
-  par défaut: 0
+# frankfurt . preparation . transport . voiture . hours:
+#   question: Car
+#   par défaut: 0
 
-## Public transport
+# ## Public transport
 
-frankfurt . preparation . transport . transports en commun:
-  titre: Public transport
-  formule: constantes . empreinte transport . transports en commun * hours
-  unité: kgCO2e
+# frankfurt . preparation . transport . transports en commun:
+#   titre: Public transport
+#   formule: constantes . empreinte transport . transports en commun * hours
+#   unité: kgCO2e
 
-frankfurt . preparation . transport . transports en commun . hours:
-  question: Public transport
-  par défaut: 0
+# frankfurt . preparation . transport . transports en commun . hours:
+#   question: Public transport
+#   par défaut: 0
 
-## Deux-roues motorisé
+# ## Deux-roues motorisé
 
-frankfurt . preparation . transport . deux-roues motorisé:
-  titre: Motorcycle
-  formule: constantes . empreinte transport . deux-roues motorisé * hours
-  unité: kgCO2e
+# frankfurt . preparation . transport . deux-roues motorisé:
+#   titre: Motorcycle
+#   formule: constantes . empreinte transport . deux-roues motorisé * hours
+#   unité: kgCO2e
 
-frankfurt . preparation . transport . deux-roues motorisé . hours:
-  question: Motorcycle
-  par défaut: 0
+# frankfurt . preparation . transport . deux-roues motorisé . hours:
+#   question: Motorcycle
+#   par défaut: 0
 
-## Train
+# ## Train
 
-frankfurt . preparation . transport . train:
-  titre: Train
-  formule: constantes . empreinte transport . train * hours
-  unité: kgCO2e
+# frankfurt . preparation . transport . train:
+#   titre: Train
+#   formule: constantes . empreinte transport . train * hours
+#   unité: kgCO2e
 
-frankfurt . preparation . transport . train . hours:
-  question: Train
-  par défaut: 0
+# frankfurt . preparation . transport . train . hours:
+#   question: Train
+#   par défaut: 0
 
-## Plane
+# ## Plane
 
-frankfurt . preparation . transport . plane:
-  titre: Plane
-  formule: constantes . empreinte transport . plane * hours
-  unité: kgCO2e
+# frankfurt . preparation . transport . plane:
+#   titre: Plane
+#   formule: constantes . empreinte transport . plane * hours
+#   unité: kgCO2e
 
-frankfurt . preparation . transport . plane . hours:
-  question: Plane
-  par défaut: 0
+# frankfurt . preparation . transport . plane . hours:
+#   question: Plane
+#   par défaut: 0
 
 ###########################################################
 ############### marathon
@@ -288,7 +288,7 @@ frankfurt . marathon . accommodation:
   formule: nb nights * 25
 
 frankfurt . marathon . accommodation . nb nights:
-  question: How long are you staying in Frankfurt ? (number of nights - if you are not from Frankfurt)
+  question: How many nights are you staying in Frankfurt? (if you are not from Frankfurt)
   par défaut: 0
   unité: nights
 
@@ -300,6 +300,6 @@ frankfurt . marathon . accompaniment:
   formule: nb person * 25 * frankfurt . marathon . accommodation . nb nights
 
 frankfurt . marathon . accompaniment . nb person:
-  question: Outside of co-racers, how many persons came with you to Frankfurt (coach, friends, family, etc.) ?
+  question: How many people came with you to Frankfurt to cheer you up? (coach, friends, family, etc.)
   par défaut: 0
   unité: person

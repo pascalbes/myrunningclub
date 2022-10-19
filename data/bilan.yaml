@@ -17,12 +17,12 @@ bilan:
   formule: 
     somme: 
       - training
-      # - competition
-      # - frankfurt
-      # - crosstraining
-      # - food
-      # - equipement
-      # - digital
+      - competition
+      - frankfurt
+      - crosstraining
+      - food
+      - equipement
+      - digital
       
   références: 
     - https://avenirclimatique.org/action/

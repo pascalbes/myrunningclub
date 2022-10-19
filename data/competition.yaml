@@ -41,7 +41,7 @@ competition . international . accommodation:
   unité: kgCO2e
 
 competition . international . accommodation . nb nights:
-  question: In total, in a year, how many nights do you spend on international or national competitions ?
+  question: In total, in a year, how many nights do you spend on international or national competitions?
   par défaut: 0
   unité: days
 

@@ -22,7 +22,7 @@ food:
 
 
 food . type repas:
-  question: Which diet are you on ?
+  question: Which diet are you on?
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -42,7 +42,7 @@ food . type repas . classical: oui
 food . type repas . carnivore:
 
 food . calories:
-  question: Compared to a person of your size and gender, how many more Kcal do you eat daily ?
+  question: Compared to a person of your size and gender, how many more Kcal do you eat daily?
   suggestions: 
     normal: 0
     légèrement plus: 200

@@ -36,7 +36,7 @@ equipement . coefficient effort matériel . effort maximum:
   formule: 0.75
 
 equipement . coefficient effort matériel . effort:
-  question: What effort do you make to keep your equipment as long as possible ?
+  question: What effort do you make to keep your equipment as long as possible?
   par défaut: "'Moyen'"
   formule:
     une possibilité: 
@@ -217,7 +217,7 @@ equipement . matériel . textile . accessories . nombre:
 equipement . matériel . elec:
   formule:
     somme:
-      - recovery
+      # - recovery
       - clockwatch
       - gps watch
       - treadmill
@@ -237,25 +237,25 @@ equipement . matériel . elec . recovery . nombre:
 ##
 
 equipement . matériel . elec . clockwatch:
-  titre: Basic clockwatch
+  titre: Basic watch
   icônes: ⌚
   formule: constantes . equipement . clockwatch * nombre
   unité: kgCO2e
 
 equipement . matériel . elec . clockwatch . nombre:
-  question: Basic clockwatch
+  question: Basic watch
   par défaut: 0
 
 ##
 
 equipement . matériel . elec . gps watch:
-  titre: GPS running watch
+  titre: Running watch
   icônes: ⌚
   formule: constantes . equipement . gps watch * nombre
   unité: kgCO2e
 
 equipement . matériel . elec . gps watch . nombre:
-  question: GPS running watch
+  question: Running watch
   par défaut: 0
 
 ##
@@ -276,6 +276,6 @@ equipement . matériel . washing:
   unité: kgCO2e
   
 equipement . matériel . washing . number:
-  question: How much more do you use your washing machine to clean your running clothes ? (number of additional use per week)
+  question: How much more do you use your washing machine to clean your running clothes? (number of additional use per week)
   par défaut: 0
   unité: washing machine
