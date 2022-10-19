@@ -33,7 +33,6 @@ training . training camp . accommodation:
 
 training . training camp . accommodation . nb days:
   question: Outside of specific training for the Frankfurt Marathon, how many days do you spend on training camp each year ?
-  par défaut: 0
   unité: days
 
 ## transport
@@ -110,7 +109,7 @@ training . daily:
 
 training . daily . nb trainings:
   question: On average, how many training sessions do you do in a week ? (outside of sessions further from home/work) ?
-  par défaut: 3
+  par défaut: 0
   unité: training
 
 training . daily . empreinte transport:
@@ -393,14 +392,12 @@ training . car . type . Electric:
 
 training . car . passengers:
   question: How many persons are there in the car, in average ?
-  par défaut: 2
   unité: person
 
 ## consumption
 
 training . car . consumption:
   question: What is the average gaz consumption of the car ?
-  par défaut: 5
   unité: l / 100 km
 
 ## footprint

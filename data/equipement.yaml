@@ -128,7 +128,7 @@ equipement . matériel . textile . maillots:
 
 equipement . matériel . textile . maillots . nombre:
   question: T-shirts
-  par défaut: 2
+  par défaut: 0
 
 ##
 
@@ -140,7 +140,7 @@ equipement . matériel . textile . short et collants:
 
 equipement . matériel . textile . short et collants . nombre:
   question: Shorts
-  par défaut: 2
+  par défaut: 0
 
 ##
 
@@ -152,7 +152,7 @@ equipement . matériel . textile . chaussures:
 
 equipement . matériel . textile . chaussures . nombre:
   question: Shoes
-  par défaut: 1
+  par défaut: 0
 
 ##
 
@@ -164,7 +164,7 @@ equipement . matériel . textile . survêtements:
 
 equipement . matériel . textile . survêtements . nombre:
   question: Tracksuit
-  par défaut: 1
+  par défaut: 0
 
 ##
 
@@ -175,7 +175,7 @@ equipement . matériel . textile . sous-vêtements:
   unité: kgCO2e
 
 equipement . matériel . textile . sous-vêtements . nombre:  
-  par défaut: 3
+  par défaut: 0
 
 ##
 
@@ -186,7 +186,7 @@ equipement . matériel . textile . manteaux:
   unité: kgCO2e
 
 equipement . matériel . textile . manteaux . nombre:
-  par défaut: 1
+  par défaut: 0
 
 ##
 
@@ -208,7 +208,7 @@ equipement . matériel . textile . accessories:
   unité: kgCO2e
 
 equipement . matériel . textile . accessories . nombre:
-  par défaut: 1
+  par défaut: 0
 
 ##
 
@@ -232,7 +232,7 @@ equipement . matériel . elec . recovery:
 
 equipement . matériel . elec . recovery . nombre:
   question: Electrical recovery device
-  par défaut: 2
+  par défaut: 0
 
 ##
 
@@ -244,7 +244,7 @@ equipement . matériel . elec . clockwatch:
 
 equipement . matériel . elec . clockwatch . nombre:
   question: Basic clockwatch
-  par défaut: 2
+  par défaut: 0
 
 ##
 
@@ -256,7 +256,7 @@ equipement . matériel . elec . gps watch:
 
 equipement . matériel . elec . gps watch . nombre:
   question: GPS running watch
-  par défaut: 2
+  par défaut: 0
 
 ##
 
@@ -267,7 +267,7 @@ equipement . matériel . elec . treadmill:
 
 equipement . matériel . elec . treadmill . nombre:
   question: Treadmill
-  par défaut: 2
+  par défaut: 0
 
 # washing
 
@@ -277,5 +277,5 @@ equipement . matériel . washing:
   
 equipement . matériel . washing . number:
   question: How much more do you use your washing machine to clean your running clothes ? (number of additional use per week)
-  par défaut: 1
+  par défaut: 0
   unité: washing machine

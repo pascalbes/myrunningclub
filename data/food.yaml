@@ -49,7 +49,6 @@ food . calories:
     beaucoup plus: 800
     régime de champion: 1500
   unité: kcal
-  par défaut: 200
 
 food . empreinte vegan:
   unité: kgCO2/kcal

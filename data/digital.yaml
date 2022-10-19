@@ -138,7 +138,7 @@ digital . streaming:
 
 digital . streaming . running:
   question: In a month, how long do you spend streaming running / athletics content on the internet on average ? (meeting or race replays, youtube videos, etc.)
-  par défaut: 2
+  par défaut: 0
   unité: hours
 
 ## sport events
