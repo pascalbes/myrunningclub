@@ -3,7 +3,7 @@ equipement:
   titre: equipment
   description: |
 
-  couleur: '#093824'
+  couleur: '#1faad3'
   icônes: 👟🩲⌚
   formule:
     somme: 

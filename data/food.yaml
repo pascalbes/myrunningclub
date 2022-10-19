@@ -3,7 +3,7 @@ food:
   abbréviation: Food
   description: |
     
-  couleur: '#247BA0'
+  couleur: '#7fbc5b'
   icônes: 🍎
   unité: kgCO2e
   formule:
