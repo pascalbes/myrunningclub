@@ -35,7 +35,7 @@ crosstraining . gym . training:
   formule: duration * constantes . contexte . gym
 
 crosstraining . gym . training . duration:
-  question: On average, how long do you spend in the gym in a month ?
+  question: On average, how long do you spend in the gym every month?
   par défaut: 0
   unité: hours
 
@@ -43,7 +43,7 @@ crosstraining . gym . training . duration:
 #########
 
 crosstraining . gym . transport:
-  formule: empreinte transport * 12
+  formule: empreinte transport * 365 / 12
   unité: kgCO2e
 
 crosstraining . gym . transport . empreinte transport:
