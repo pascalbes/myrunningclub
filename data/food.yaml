@@ -14,11 +14,11 @@ food:
         alors: calories * empreinte vegetarian * 365
       - si: type repas = 'flexitarian'
         alors: calories * empreinte flexitarian * 365
-      - si: type repas = 'classical'
-        alors: calories * empreinte classical * 365
+      - si: type repas = 'omnivore'
+        alors: calories * empreinte omnivore * 365
       - si: type repas = 'carnivore'
         alors: calories * empreinte carnivore * 365
-      - sinon: calories * empreinte classical * 365
+      - sinon: calories * empreinte omnivore * 365
 
 
 food . type repas:
@@ -30,24 +30,24 @@ food . type repas:
         - vegan
         - vegetarian
         - flexitarian
-        - classical
+        - omnivore
         - carnivore
-  par défaut: classical
+  par défaut: omnivore
 
 
 food . type repas . vegan:
 food . type repas . vegetarian:
 food . type repas . flexitarian:
-food . type repas . classical: oui
+food . type repas . omnivore: oui
 food . type repas . carnivore:
 
 food . calories:
   question: Compared to a person of your size and gender, how many more Kcal do you eat daily?
   suggestions: 
     normal: 0
-    légèrement plus: 200
-    beaucoup plus: 800
-    régime de champion: 1500
+    a bit more: 200
+    way more: 800
+    like a champion: 1500
   unité: kcal
 
 food . empreinte vegan:
@@ -62,7 +62,7 @@ food . empreinte flexitarian:
   unité: kgCO2/kcal
   formule: 2.86 / 2500
 
-food . empreinte classical:
+food . empreinte omnivore:
   unité: kgCO2/kcal
   formule: 4.53 / 2500
 
