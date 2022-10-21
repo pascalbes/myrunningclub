@@ -42,7 +42,7 @@ frankfurt . preparation:
 #################
 
 frankfurt . preparation . races:
-  formule: nb * 25
+  formule: nb * 0.39
 
 frankfurt . preparation . races . nb:
   question: How many preparation races have you participated in?
@@ -285,7 +285,7 @@ frankfurt . marathon . food . prerace cake . number:
 #################
 
 frankfurt . marathon . accommodation:
-  formule: nb nights * 25
+  formule: nb nights * 3.92
 
 frankfurt . marathon . accommodation . nb nights:
   question: How many nights are you staying in Frankfurt? (if you are not from Frankfurt)
@@ -297,7 +297,7 @@ frankfurt . marathon . accommodation . nb nights:
 #################
 
 frankfurt . marathon . accompaniment:
-  formule: nb person * 25 * frankfurt . marathon . accommodation . nb nights
+  formule: nb person * 3.92 * frankfurt . marathon . accommodation . nb nights * 0.2
 
 frankfurt . marathon . accompaniment . nb person:
   question: How many people came with you to Frankfurt to cheer you up? (coach, friends, family, etc.)

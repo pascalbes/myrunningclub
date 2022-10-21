@@ -28,7 +28,7 @@ training . training camp:
 ## accommodation
 
 training . training camp . accommodation:
-  formule: nb days * 23
+  formule: nb days * 3.92
   unité: kgCO2e
 
 training . training camp . accommodation . nb days:
@@ -104,7 +104,7 @@ training . training camp . transport . plane . hours:
 #########
 
 training . daily:
-  formule: nb trainings * empreinte transport * empreinte lieu * 365 / 7 / 60 # / 60 as the unit is minutes
+  formule: nb trainings * empreinte transport * 365 / 7 / 60 + empreinte lieu # / 60 as the unit is minutes
   unité: kgCO2e
 
 training . daily . nb trainings:
@@ -170,19 +170,9 @@ training . daily . empreinte transport . deux-roues motorisé . minutes:
 ## empreinte lieu
 #########
 
-variations:
-      - si: type = 'Thermal'
-        alors: thermal . footprint by km / passengers
 
 training . daily . empreinte lieu:
   unité: kgCO2e/training
-  formule:
-    variations:
-      - si: total > 0
-        alors: total
-      - sinon: 1
-
-training . daily . empreinte lieu . total:
   formule:
     somme:
       - outside
@@ -192,14 +182,15 @@ training . daily . empreinte lieu . total:
       - ontrack indoor unlight
       - treadmill
 
+
 ## Outside
 
 training . daily . empreinte lieu . outside:
   titre: Outside - offtrack
-  formule: constantes . empreinte lieu . outside * percentage / 100
+  formule: constantes . empreinte lieu . outside * hour * 365 / 7
   unité: kgCO2e
 
-training . daily . empreinte lieu . outside . percentage:
+training . daily . empreinte lieu . outside . hour:
   question: Outside - offtrack
   par défaut: 0
 
@@ -207,10 +198,10 @@ training . daily . empreinte lieu . outside . percentage:
 
 training . daily . empreinte lieu . ontrack outdoor light:
   titre: On the track (outdoors, lighted)
-  formule: constantes . empreinte lieu . ontrack outdoor light * percentage / 100
+  formule: constantes . empreinte lieu . ontrack outdoor light * hour * 365 / 7
   unité: kgCO2e
 
-training . daily . empreinte lieu . ontrack outdoor light . percentage:
+training . daily . empreinte lieu . ontrack outdoor light . hour:
   question: On the track (outdoors, lighted)
   par défaut: 0
 
@@ -218,10 +209,10 @@ training . daily . empreinte lieu . ontrack outdoor light . percentage:
 
 training . daily . empreinte lieu . ontrack outdoor unlight:
   titre: Outdoor track - lighted
-  formule: constantes . empreinte lieu . ontrack outdoor unlight * percentage / 100
+  formule: constantes . empreinte lieu . ontrack outdoor unlight * hour * 365 / 7
   unité: kgCO2e
 
-training . daily . empreinte lieu . ontrack outdoor unlight . percentage:
+training . daily . empreinte lieu . ontrack outdoor unlight . hour:
   question: Outdoor track - lighted
   par défaut: 0
 
@@ -229,10 +220,10 @@ training . daily . empreinte lieu . ontrack outdoor unlight . percentage:
 
 training . daily . empreinte lieu . ontrack indoor light:
   titre: Indoor track - lighted
-  formule: constantes . empreinte lieu . ontrack indoor light * percentage / 100
+  formule: constantes . empreinte lieu . ontrack indoor light * hour * 365 / 7
   unité: kgCO2e
 
-training . daily . empreinte lieu . ontrack indoor light . percentage:
+training . daily . empreinte lieu . ontrack indoor light . hour:
   question: Indoor track - lighted
   par défaut: 0
 
@@ -240,10 +231,10 @@ training . daily . empreinte lieu . ontrack indoor light . percentage:
 
 training . daily . empreinte lieu . ontrack indoor unlight:
   titre: Indoor track - lighted
-  formule: constantes . empreinte lieu . ontrack indoor unlight * percentage / 100
+  formule: constantes . empreinte lieu . ontrack indoor unlight * hour * 365 / 7
   unité: kgCO2e
 
-training . daily . empreinte lieu . ontrack indoor unlight . percentage:
+training . daily . empreinte lieu . ontrack indoor unlight . hour:
   question: Indoor track - lighted
   par défaut: 0
 
@@ -251,10 +242,10 @@ training . daily . empreinte lieu . ontrack indoor unlight . percentage:
 
 training . daily . empreinte lieu . treadmill:
   titre: Treadmill
-  formule: constantes . empreinte lieu . treadmill * percentage / 100
+  formule: constantes . empreinte lieu . treadmill * hour * 365 / 7
   unité: kgCO2e
 
-training . daily . empreinte lieu . treadmill . percentage:
+training . daily . empreinte lieu . treadmill . hour:
   question: Treadmill
   par défaut: 0
 

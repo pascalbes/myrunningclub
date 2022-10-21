@@ -20,7 +20,8 @@ constantes . contexte . maison seul:
   formule: 1
   unité: kgCO2e
 constantes . contexte . gym:
-  formule: 0.067
+  formule: 0.32
+
   unité: kgCO2e
 
   ## Numérique
@@ -48,50 +49,62 @@ constantes . numérique . actualités . de temps en temps:
 constantes . numérique . actualités . jamais:
   formule: 0
   unité: kgCO2e
-## equipement
 
+## equipement
 constantes . equipement:
-constantes . equipement . echarpes:
-  formule: 1.6
-  unité: kgCO2e
-constantes . equipement . maillots:
-  formule: 5.5
-  unité: kgCO2e
-constantes . equipement . petits équipements:
-  formule: 2.156
-  unité: kgCO2e
-constantes . equipement . short et collants:
-  formule: 0.8
-  unité: kgCO2e
+
 constantes . equipement . chaussures:
   formule: 18.7
+  unité: kgCO2e
+constantes . equipement . sous-vêtements:
+  formule: 3.23
   unité: kgCO2e
 constantes . equipement . survêtements:
   formule: 31.5
   unité: kgCO2e
-constantes . equipement . sous-vêtements:
-  formule: 0.3
+constantes . equipement . maillots:
+  formule: 4.62
   unité: kgCO2e
-constantes . equipement . manteaux:
-  formule: 85.8
+constantes . equipement . short et collants:
+  formule: 3.22
   unité: kgCO2e
 constantes . equipement . trousers:
-  formule: 16.5
+  formule: 10.26
+  unité: kgCO2e
+constantes . equipement . manteaux:
+  formule: 30.6
   unité: kgCO2e
 constantes . equipement . accessories:
-  formule: 4.12
+  formule: 0.89
   unité: kgCO2e
+
+
+
+constantes . equipement . echarpes:
+  formule: 1.6
+  unité: kgCO2e
+
+constantes . equipement . petits équipements:
+  formule: 2.156
+  unité: kgCO2e
+
+
+
+
+
+
+
 constantes . equipement . recovery:
-  formule: 4.12
+  formule: 16.5
   unité: kgCO2e
 constantes . equipement . clockwatch:
-  formule: 4.12
+  formule: 8.8
   unité: kgCO2e
 constantes . equipement . gps watch:
-  formule: 4.12
+  formule: 9.72
   unité: kgCO2e
 constantes . equipement . treadmill:
-  formule: 4.12
+  formule: 264.211
   unité: kgCO2e
 
 
@@ -99,22 +112,22 @@ constantes . equipement . treadmill:
 
 constantes . empreinte lieu:
 constantes . empreinte lieu . outside:
-  formule: 0.103
+  formule: 0
   unité: kgCO2e
 constantes . empreinte lieu . ontrack outdoor light:
-  formule: 0.103
+  formule: 0.153
   unité: kgCO2e
 constantes . empreinte lieu . ontrack outdoor unlight:
-  formule: 0.103
+  formule: 0
   unité: kgCO2e
 constantes . empreinte lieu . ontrack indoor light:
-  formule: 0.103
+  formule: 2.56
   unité: kgCO2e
 constantes . empreinte lieu . ontrack indoor unlight:
-  formule: 0.103
+  formule: 2.51
   unité: kgCO2e
 constantes . empreinte lieu . treadmill:
-  formule: 0.103
+  formule: 0.085
   unité: kgCO2e
 
 ## Transports
@@ -136,14 +149,14 @@ constantes . empreinte transport . deux-roues motorisé:
   unité: kgCO2e
 
 constantes . empreinte transport . train:
-  formule: 2
+  formule: 1.1712
   unité: kgCO2e
 constantes . empreinte transport . train heure:
-  formule: 2
+  formule: 1.1712
   unité: kgCO2e
 
 constantes . empreinte transport . plane:
-  formule: 106.15 ## à confirmer
+  formule: 106.15
   unité: kgCO2e
 constantes . empreinte transport . plane heure:
   formule: 106.15
@@ -183,20 +196,22 @@ constantes . food . maison:
 constantes . food . barres:
   formule: 7.72
   unité: kgCO2e
-constantes . food . fruits:
-  formule: 0.284
-  unité: kgCO2e
+
+
 constantes . food . energy bars:
-  formule: 0.284
+  formule: 0.23
   unité: kgCO2e
 constantes . food . energy drinks:
-  formule: 0.284
+  formule: 0.51
+  unité: kgCO2e
+constantes . food . fruits:
+  formule: 0.13
   unité: kgCO2e
 constantes . food . water bottle:
-  formule: 0.284
+  formule: 0.28
   unité: kgCO2e
 constantes . food . prerace cake:
-  formule: 0.284
+  formule: 1.97
   unité: kgCO2e
 
 ## Boissons

@@ -54,11 +54,11 @@ digital . sport network:
   formule:
     variations: 
       - si: type = 'systematically'
-        alors: constantes . numérique . actualités . assidument
+        alors: 1.66
       - si: type = 'from time to time'
-        alors: constantes . numérique . actualités . de temps en temps
+        alors: 0.28
       - si: type = 'never'
-        alors: constantes . numérique . actualités . jamais
+        alors: 0
 
 digital . sport network . type:
   question: Do you use Strava or a similar network to share your sports activity?
@@ -86,11 +86,11 @@ digital . social media:
   formule:
     variations: 
       - si: type = 'systematically'
-        alors: constantes . numérique . actualités . assidument
+        alors: 1.67
       - si: type = 'from time to time'
-        alors: constantes . numérique . actualités . de temps en temps
+        alors: 0.28
       - si: type = 'never'
-        alors: constantes . numérique . actualités . jamais
+        alors: 0
 
 digital . social media . type:
   question: Do you share your activity on other non specific social media (Instagram, Facebook, etc.)?
@@ -118,11 +118,11 @@ digital . training platform:
   formule:
     variations: 
       - si: use = oui
-        alors: 50
+        alors: 5.8
       - sinon: 0
 
 digital . training platform . use:
-  question: Do you use a dedicated training planning platform?
+  question: Do you use a dedicated training planning platform (Nolio, training tilt, science training, surge, ...)?
 
 
 #################
@@ -132,13 +132,16 @@ digital . training platform . use:
 digital . streaming:
   formule: 
     somme:
-      - running * 365 / 7
+      - running
       - sport events
 
 ## running
 
 digital . streaming . running:
-  question: In a week, how long do you spend streaming running / athletics content on the internet on average? (meeting or race replays, youtube videos, etc.)
+  formule: hours * 365 / 7 * 0.0345
+
+digital . streaming . running . hours:
+  question: In a week, how many hours do you spend streaming running / athletics content on the internet on average? (meeting or race replays, youtube videos, etc.)
   par défaut: 0
   unité: hours
 
@@ -159,7 +162,7 @@ digital . streaming . sport events . olympics:
   formule:
     variations: 
       - si: présent
-        alors: 50
+        alors: 0.045
       - sinon: 0
 
 digital . streaming . sport events . olympics . présent:
@@ -172,7 +175,7 @@ digital . streaming . sport events . world champ:
   formule:
     variations: 
       - si: présent
-        alors: 50
+        alors: 0.045
       - sinon: 0
 
 digital . streaming . sport events . world champ . présent:
@@ -185,7 +188,7 @@ digital . streaming . sport events . continental champ:
   formule:
     variations: 
       - si: présent
-        alors: 50
+        alors: 0.045
       - sinon: 0
 
 digital . streaming . sport events . continental champ . présent:
@@ -198,7 +201,7 @@ digital . streaming . sport events . marathons:
   formule:
     variations: 
       - si: présent
-        alors: 50
+        alors: 0.045
       - sinon: 0
 
 digital . streaming . sport events . marathons . présent:
@@ -211,7 +214,7 @@ digital . streaming . sport events . diamond league:
   formule:
     variations: 
       - si: présent
-        alors: 50
+        alors: 0.045
       - sinon: 0
 
 digital . streaming . sport events . diamond league . présent:

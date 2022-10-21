@@ -37,7 +37,7 @@ competition . international . présent:
 #################
 
 competition . international . accommodation:
-  formule: nb nights * 23
+  formule: nb nights * 3.92
   unité: kgCO2e
 
 competition . international . accommodation . nb nights:
@@ -62,7 +62,7 @@ competition . international . events:
 
 competition . international . events . outdoor mid to long:
   titre: Road running race
-  formule: 10 * number
+  formule: 0.39 * number
   unité: kgCO2e
 
 competition . international . events . outdoor mid to long . number:
@@ -73,7 +73,7 @@ competition . international . events . outdoor mid to long . number:
 
 competition . international . events . trail:
   titre: Trail running race
-  formule: 10 * number
+  formule: 0.39 * number
   unité: kgCO2e
 
 competition . international . events . trail . number:
@@ -84,7 +84,7 @@ competition . international . events . trail . number:
 
 competition . international . events . outdoor tranck and field:
   titre: Outdoor track and field meeting
-  formule: 10 * number
+  formule: 0.82 * number
   unité: kgCO2e
 
 competition . international . events . outdoor tranck and field . number:
@@ -95,7 +95,7 @@ competition . international . events . outdoor tranck and field . number:
 
 competition . international . events . indoor:
   titre: Indoor track and field meeting
-  formule: 10 * number
+  formule: 3.38 * number
   unité: kgCO2e
 
 competition . international . events . indoor . number:
@@ -210,7 +210,7 @@ competition . regional . events:
 
 competition . regional . events . outdoor mid to long:
   titre: Outdoor mid to long distance competition
-  formule: 10 * number
+  formule: 0.2 * number
   unité: kgCO2e
 
 competition . regional . events . outdoor mid to long . number:
@@ -221,7 +221,7 @@ competition . regional . events . outdoor mid to long . number:
 
 competition . regional . events . trail:
   titre: Trail running competition
-  formule: 10 * number
+  formule: 0.2 * number
   unité: kgCO2e
 
 competition . regional . events . trail . number:
@@ -232,7 +232,7 @@ competition . regional . events . trail . number:
 
 competition . regional . events . outdoor tranck and field:
   titre: Outdoor track and field meeting
-  formule: 10 * number
+  formule: 0.36 * number
   unité: kgCO2e
 
 competition . regional . events . outdoor tranck and field . number:
@@ -243,7 +243,7 @@ competition . regional . events . outdoor tranck and field . number:
 
 competition . regional . events . indoor:
   titre: Indoor track and field meeting
-  formule: 10 * number
+  formule: 2.9 * number
   unité: kgCO2e
 
 competition . regional . events . indoor . number:

@@ -272,7 +272,7 @@ equipement . matériel . elec . treadmill . nombre:
 # washing
 
 equipement . matériel . washing:
-  formule: number * 365 / 7 * 10
+  formule: number * 365 / 7 * 0.0569
   unité: kgCO2e
   
 equipement . matériel . washing . number:
