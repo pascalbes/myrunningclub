@@ -8,7 +8,7 @@ training:
   formule:
     somme:
       - daily
-      - exceptional
+      # - exceptional
       - training camp
       - food
   unité: kgCO2e
