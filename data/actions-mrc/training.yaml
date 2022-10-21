@@ -10,15 +10,15 @@ training . entrainement vélo plutôt que voiture:
       - training . exceptional . empreinte . deux-roues motorisé
 
   description: |
-    Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au sport réduit notre empreinte climat, mais améliore aussi notre qualité de vie. 70% des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme. En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
+    
   unité: kgCO2e
 
 training . training camp by train:
-  titre: Chose training camps reachable by train
+  titre: Choose training camps reachable by train
   formule: total footprint by plane - total footprint by plane * constantes . empreinte transport . train / constantes . empreinte transport . plane
 
   description: |
-    Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au sport réduit notre empreinte climat, mais améliore aussi notre qualité de vie. 70% des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme. En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
+    
   unité: kgCO2e
 
 training . training camp by train . total footprint by plane:
@@ -31,12 +31,12 @@ equipement . keep it longer:
   titre: Keep you equipment longer
   formule: equipement - equipement . matériel * equipement . coefficient achat matériel * equipement . coefficient effort matériel . effort maximum
   description: |
-    Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au sport réduit notre empreinte climat, mais améliore aussi notre qualité de vie. 70% des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme. En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
+    
   unité: kgCO2e
 
 competition . closer to home:
   titre: Compete closer to home
   formule: competition . international . transport . plane - competition . international . transport . plane / constantes . empreinte transport . train / constantes . empreinte transport . plane
   description: |
-    Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au sport réduit notre empreinte climat, mais améliore aussi notre qualité de vie. 70% des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme. En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
+    
   unité: kgCO2e
