@@ -230,12 +230,12 @@ training . daily . empreinte lieu . ontrack indoor light . hour:
 ## ontrack outdoor unlight
 
 training . daily . empreinte lieu . ontrack indoor unlight:
-  titre: Indoor track - lighted
+  titre: Indoor track - unlighted
   formule: constantes . empreinte lieu . ontrack indoor unlight * hour * 365 / 7
   unité: kgCO2e
 
 training . daily . empreinte lieu . ontrack indoor unlight . hour:
-  question: Indoor track - lighted
+  question: Indoor track - unlighted
   par défaut: 0
 
 ## treadmill

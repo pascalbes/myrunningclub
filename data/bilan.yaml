@@ -7,11 +7,11 @@ bilan:
     somme: 
       - training
       - competition
-      - frankfurt
-      - crosstraining
+      # - frankfurt
+      # - crosstraining
       - food
-      - equipement
-      - digital
+      # - equipement
+      # - digital
       
   références: 
     - https://avenirclimatique.org/action/
