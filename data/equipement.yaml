@@ -89,7 +89,7 @@ equipement . coefficient achat matériel . type . achat occasion:
 equipement . coefficient achat matériel . type . récupéré:
   titre: Recovered
 equipement . coefficient achat matériel . type . loué:
-  titre: Rent
+  titre: Rented
 
 ##########
 # Matériel

@@ -108,7 +108,7 @@ training . daily:
   unité: kgCO2e
 
 training . daily . nb trainings:
-  question: On average, how many training sessions do you do in a week? (apart of sessions further from home/work)
+  question: On average, how many training sessions do you do in a week?
   par défaut: 0
   unité: training
 
