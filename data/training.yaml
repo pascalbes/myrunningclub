@@ -197,23 +197,23 @@ training . daily . empreinte lieu . outside . hour:
 ## ontrack outdoor light
 
 training . daily . empreinte lieu . ontrack outdoor light:
-  titre: On the track (outdoors, lighted)
+  titre: Outdoor track - lighted
   formule: constantes . empreinte lieu . ontrack outdoor light * hour * 365 / 7
   unité: kgCO2e
 
 training . daily . empreinte lieu . ontrack outdoor light . hour:
-  question: On the track (outdoors, lighted)
+  question: Outdoor track - lighted
   par défaut: 0
 
 ## ontrack outdoor unlight
 
 training . daily . empreinte lieu . ontrack outdoor unlight:
-  titre: Outdoor track - lighted
+  titre: Outdoor track - unlighted
   formule: constantes . empreinte lieu . ontrack outdoor unlight * hour * 365 / 7
   unité: kgCO2e
 
 training . daily . empreinte lieu . ontrack outdoor unlight . hour:
-  question: Outdoor track - lighted
+  question: Outdoor track - unlighted
   par défaut: 0
 
 ## ontrack indoor light
