@@ -152,6 +152,7 @@ frankfurt . marathon . transport:
 
 frankfurt . marathon . transport . doux:
   titre: Bike, scooter, feet
+  icônes: 🚴‍♂️ 🛵 🚶‍♂️
   formule: constantes . empreinte transport . doux * hours
   unité: kgCO2e
 
@@ -163,6 +164,7 @@ frankfurt . marathon . transport . doux . hours:
 
 frankfurt . marathon . transport . voiture:
   titre: Car
+  icônes: 🚗
   formule: constantes . empreinte transport . car * hours
   unité: kgCO2e
 
@@ -174,6 +176,7 @@ frankfurt . marathon . transport . voiture . hours:
 
 frankfurt . marathon . transport . transports en commun:
   titre: Public transport
+  icônes: 🚌 🚎
   formule: constantes . empreinte transport . transports en commun * hours
   unité: kgCO2e
 
@@ -185,6 +188,7 @@ frankfurt . marathon . transport . transports en commun . hours:
 
 frankfurt . marathon . transport . deux-roues motorisé:
   titre: Motorcycle
+  icônes: 🏍
   formule: constantes . empreinte transport . deux-roues motorisé * hours
   unité: kgCO2e
 
@@ -196,6 +200,7 @@ frankfurt . marathon . transport . deux-roues motorisé . hours:
 
 frankfurt . marathon . transport . train:
   titre: Train
+  icônes: 🚆🚊
   formule: constantes . empreinte transport . train * hours
   unité: kgCO2e
 
@@ -207,6 +212,7 @@ frankfurt . marathon . transport . train . hours:
 
 frankfurt . marathon . transport . plane:
   titre: Plane
+  icônes: 🛫
   formule: constantes . empreinte transport . plane * hours
   unité: kgCO2e
 
@@ -234,6 +240,7 @@ frankfurt . marathon . food:
 
 frankfurt . marathon . food . energy bars:
   titre: Energy bars / gels
+  icônes: 🍫
   formule: constantes . food . energy bars * number
   unité: kgCO2e
 frankfurt . marathon . food . energy bars . number:
@@ -244,6 +251,7 @@ frankfurt . marathon . food . energy bars . number:
 
 frankfurt . marathon . food . energy drinks:
   titre: Energy drink
+  icônes: 🥤
   formule: constantes . food . energy drinks * number
   unité: kgCO2e
 frankfurt . marathon . food . energy drinks . number:
@@ -254,6 +262,7 @@ frankfurt . marathon . food . energy drinks . number:
 
 frankfurt . marathon . food . fruits:
   titre: Fruits
+  icônes: 🍎 🍐 🍊
   formule: constantes . food . fruits * number
   unité: kgCO2e
 frankfurt . marathon . food . fruits . number:
@@ -264,6 +273,7 @@ frankfurt . marathon . food . fruits . number:
 
 frankfurt . marathon . food . water bottle:
   titre: Water bottle
+  icônes: 🥛
   formule: constantes . food . water bottle * number
   unité: kgCO2e
 frankfurt . marathon . food . water bottle . number:
@@ -274,6 +284,7 @@ frankfurt . marathon . food . water bottle . number:
 
 frankfurt . marathon . food . prerace cake:
   titre: Prerace cake
+  icônes: 🍪
   formule: constantes . food . prerace cake * number
   unité: kgCO2e
 frankfurt . marathon . food . prerace cake . number:

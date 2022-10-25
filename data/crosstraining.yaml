@@ -60,6 +60,7 @@ crosstraining . gym . transport . empreinte transport:
 
 crosstraining . gym . transport . empreinte transport . doux:
   titre: Bike, scooter, feet
+  icônes: 🚴‍♂️ 🛵 🚶‍♂️
   formule: constantes . empreinte transport . doux * hours
   unité: kgCO2e
 
@@ -71,6 +72,7 @@ crosstraining . gym . transport . empreinte transport . doux . hours:
 
 crosstraining . gym . transport . empreinte transport . voiture:
   titre: Car
+  icônes: 🚗
   formule: constantes . empreinte transport . car * hours
   unité: kgCO2e
 
@@ -82,6 +84,7 @@ crosstraining . gym . transport . empreinte transport . voiture . hours:
 
 crosstraining . gym . transport . empreinte transport . transports en commun:
   titre: Public transport
+  icônes: 🚌 🚎
   formule: constantes . empreinte transport . transports en commun * hours
   unité: kgCO2e
 
@@ -93,6 +96,7 @@ crosstraining . gym . transport . empreinte transport . transports en commun . h
 
 crosstraining . gym . transport . empreinte transport . deux-roues motorisé:
   titre: Motorcycle
+  icônes: 🏍
   formule: constantes . empreinte transport . deux-roues motorisé * hours
   unité: kgCO2e
 
@@ -153,6 +157,7 @@ crosstraining . winter . transport . empreinte transport:
 
 crosstraining . winter . transport . empreinte transport . doux:
   titre: Bike, scooter, feet
+  icônes: 🚴‍♂️ 🛵 🚶‍♂️
   formule: constantes . empreinte transport . doux * hours
   unité: kgCO2e
 
@@ -164,6 +169,7 @@ crosstraining . winter . transport . empreinte transport . doux . hours:
 
 crosstraining . winter . transport . empreinte transport . voiture:
   titre: Car
+  icônes: 🚗
   formule: constantes . empreinte transport . car * hours
   unité: kgCO2e
 
@@ -175,6 +181,7 @@ crosstraining . winter . transport . empreinte transport . voiture . hours:
 
 crosstraining . winter . transport . empreinte transport . transports en commun:
   titre: Public transport
+  icônes: 🚌 🚎
   formule: constantes . empreinte transport . transports en commun * hours
   unité: kgCO2e
 
@@ -186,6 +193,7 @@ crosstraining . winter . transport . empreinte transport . transports en commun 
 
 crosstraining . winter . transport . empreinte transport . deux-roues motorisé:
   titre: Motorcycle
+  icônes: 🏍
   formule: constantes . empreinte transport . deux-roues motorisé * hours
   unité: kgCO2e
 

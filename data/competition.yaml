@@ -122,6 +122,7 @@ competition . international . transport:
 
 competition . international . transport . voiture:
   titre: Car
+  icônes: 🚗
   formule: constantes . empreinte transport . car * hours * 2
   unité: kgCO2e
 
@@ -133,6 +134,7 @@ competition . international . transport . voiture . hours:
 
 competition . international . transport . transports en commun:
   titre: Public transport
+  icônes: 🚌 🚎
   formule: constantes . empreinte transport . transports en commun * hours * 2
   unité: kgCO2e
 
@@ -144,6 +146,7 @@ competition . international . transport . transports en commun . hours:
 
 competition . international . transport . deux-roues motorisé:
   titre: Motorcycle
+  icônes: 🏍
   formule: constantes . empreinte transport . deux-roues motorisé * hours * 2
   unité: kgCO2e
 
@@ -155,6 +158,7 @@ competition . international . transport . deux-roues motorisé . hours:
 
 competition . international . transport . train:
   titre: Train
+  icônes: 🚆🚊
   formule: constantes . empreinte transport . train * hours * 2
   unité: kgCO2e
 
@@ -166,6 +170,7 @@ competition . international . transport . train . hours:
 
 competition . international . transport . plane:
   titre: Plane
+  icônes: 🛫
   formule: constantes . empreinte transport . plane * hours * 2
   unité: kgCO2e
 
@@ -269,6 +274,7 @@ competition . regional . transport:
 
 competition . regional . transport . doux:
   titre: Bike, scooter, feet
+  icônes: 🚴‍♂️ 🛵 🚶‍♂️
   formule: constantes . empreinte transport . doux * hours * 2
   unité: kgCO2e
 
@@ -280,6 +286,7 @@ competition . regional . transport . doux . hours:
 
 competition . regional . transport . voiture:
   titre: Car
+  icônes: 🚗
   formule: constantes . empreinte transport . car * hours * 2
   unité: kgCO2e
 
@@ -291,6 +298,7 @@ competition . regional . transport . voiture . hours:
 
 competition . regional . transport . transports en commun:
   titre: Public transport
+  icônes: 🚌 🚎
   formule: constantes . empreinte transport . transports en commun * hours * 2
   unité: kgCO2e
 
@@ -302,6 +310,7 @@ competition . regional . transport . transports en commun . hours:
 
 competition . regional . transport . deux-roues motorisé:
   titre: Motorcycle
+  icônes: 🏍
   formule: constantes . empreinte transport . deux-roues motorisé * hours * 2
   unité: kgCO2e
 
@@ -313,6 +322,7 @@ competition . regional . transport . deux-roues motorisé . hours:
 
 competition . regional . transport . train:
   titre: Train
+  icônes: 🚆🚊
   formule: constantes . empreinte transport . train * hours * 2
   unité: kgCO2e
 

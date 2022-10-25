@@ -58,6 +58,7 @@ training . training camp . transport . empreinte:
 
 training . training camp . transport . voiture:
   titre: Car
+  icônes: 🚗
   formule: constantes . empreinte transport . car * hours
   unité: kgCO2e
 
@@ -69,6 +70,7 @@ training . training camp . transport . voiture . hours:
 
 training . training camp . transport . deux-roues motorisé:
   titre: Motorcycle
+  icônes: 🏍
   formule: constantes . empreinte transport . deux-roues motorisé * hours
   unité: kgCO2e
 
@@ -80,6 +82,7 @@ training . training camp . transport . deux-roues motorisé . hours:
 
 training . training camp . transport . train:
   titre: Train
+  icônes: 🚆🚊
   formule: constantes . empreinte transport . train * hours
   unité: kgCO2e
 
@@ -91,6 +94,7 @@ training . training camp . transport . train . hours:
 
 training . training camp . transport . plane:
   titre: Plane
+  icônes: 🛫
   formule: constantes . empreinte transport . plane * hours
   unité: kgCO2e
 
@@ -126,6 +130,7 @@ training . daily . empreinte transport:
 
 training . daily . empreinte transport . doux:
   titre: Bike, scooter, feet
+  icônes: 🚴‍♂️ 🛵 🚶‍♂️
   formule: constantes . empreinte transport . doux * minutes
   unité: kgCO2e
 
@@ -137,6 +142,7 @@ training . daily . empreinte transport . doux . minutes:
 
 training . daily . empreinte transport . voiture:
   titre: Car
+  icônes: 🚗
   formule: constantes . empreinte transport . car * minutes
   unité: kgCO2e
 
@@ -148,6 +154,7 @@ training . daily . empreinte transport . voiture . minutes:
 
 training . daily . empreinte transport . transports en commun:
   titre: Public transport
+  icônes: 🚌 🚎
   formule: constantes . empreinte transport . transports en commun * minutes
   unité: kgCO2e
 
@@ -159,6 +166,7 @@ training . daily . empreinte transport . transports en commun . minutes:
 
 training . daily . empreinte transport . deux-roues motorisé:
   titre: Motorcycle
+  icônes: 🏍
   formule: constantes . empreinte transport . deux-roues motorisé * minutes
   unité: kgCO2e
 
@@ -273,6 +281,7 @@ training . exceptional . empreinte :
 
 training . exceptional . empreinte . doux:
   titre: Bike, scooter, feet
+  icônes: 🚴‍♂️ 🛵 🚶‍♂️
   formule: constantes . empreinte transport . doux * hours
   unité: kgCO2e
 
@@ -284,6 +293,7 @@ training . exceptional . empreinte . doux . hours:
 
 training . exceptional . empreinte . voiture:
   titre: Car
+  icônes: 🚗
   formule: constantes . empreinte transport . car * hours
   unité: kgCO2e
 
@@ -295,6 +305,7 @@ training . exceptional . empreinte . voiture . hours:
 
 training . exceptional . empreinte . transports en commun:
   titre: Public transport
+  icônes: 🚌 🚎
   formule: constantes . empreinte transport . transports en commun * hours
   unité: kgCO2e
 
@@ -306,6 +317,7 @@ training . exceptional . empreinte . transports en commun . hours:
 
 training . exceptional . empreinte . deux-roues motorisé:
   titre: Motorcycle
+  icônes: 🏍
   formule: constantes . empreinte transport . deux-roues motorisé * hours
   unité: kgCO2e
 
