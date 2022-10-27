@@ -87,7 +87,7 @@ equipement . coefficient achat matériel . type . acheté neuf:
 equipement . coefficient achat matériel . type . achat occasion:
   titre: Second hand
 equipement . coefficient achat matériel . type . récupéré:
-  titre: Recovered
+  titre: Recycled
 equipement . coefficient achat matériel . type . loué:
   titre: Rented
 
@@ -276,6 +276,6 @@ equipement . matériel . washing:
   unité: kgCO2e
   
 equipement . matériel . washing . number:
-  question: How much more do you use your washing machine to clean your running clothes? (number of additional use per week)
+  question: How many times do you wash your sports clothes per week (with a washing machine)? 
   par défaut: 0
-  unité: washing machine
+  unité: washes

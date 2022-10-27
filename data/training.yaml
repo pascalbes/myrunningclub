@@ -195,6 +195,7 @@ training . daily . empreinte lieu:
 
 training . daily . empreinte lieu . outside:
   titre: Outside - offtrack
+  icônes:  🏔 
   formule: constantes . empreinte lieu . outside * hour * 365 / 7
   unité: kgCO2e
 
@@ -206,6 +207,7 @@ training . daily . empreinte lieu . outside . hour:
 
 training . daily . empreinte lieu . ontrack outdoor light:
   titre: Outdoor track - lighted
+  icônes:  🏟️ 💡
   formule: constantes . empreinte lieu . ontrack outdoor light * hour * 365 / 7
   unité: kgCO2e
 
@@ -217,6 +219,7 @@ training . daily . empreinte lieu . ontrack outdoor light . hour:
 
 training . daily . empreinte lieu . ontrack outdoor unlight:
   titre: Outdoor track - unlighted
+  icônes:  🏟️
   formule: constantes . empreinte lieu . ontrack outdoor unlight * hour * 365 / 7
   unité: kgCO2e
 
@@ -228,6 +231,7 @@ training . daily . empreinte lieu . ontrack outdoor unlight . hour:
 
 training . daily . empreinte lieu . ontrack indoor light:
   titre: Indoor track - lighted
+  icônes:  🏫 💡
   formule: constantes . empreinte lieu . ontrack indoor light * hour * 365 / 7
   unité: kgCO2e
 
@@ -239,6 +243,7 @@ training . daily . empreinte lieu . ontrack indoor light . hour:
 
 training . daily . empreinte lieu . ontrack indoor unlight:
   titre: Indoor track - unlighted
+  icônes:  🏫
   formule: constantes . empreinte lieu . ontrack indoor unlight * hour * 365 / 7
   unité: kgCO2e
 
@@ -374,12 +379,12 @@ training . food . fruits . number:
 ## water bottle
 
 training . food . water bottle:
-  titre: Water bottle
+  titre: Water in a plastic bottle
   icônes: 🥛
   formule: constantes . food . water bottle * number
   unité: kgCO2e
 training . food . water bottle . number:
-  question: Water bottle
+  question: Water in a plastic bottle
   par défaut: 0
 
 

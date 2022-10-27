@@ -272,12 +272,12 @@ frankfurt . marathon . food . fruits . number:
 ## water bottle
 
 frankfurt . marathon . food . water bottle:
-  titre: Water bottle
+  titre: Water in a plastic bottle
   icônes: 🥛
   formule: constantes . food . water bottle * number
   unité: kgCO2e
 frankfurt . marathon . food . water bottle . number:
-  question: Water bottle
+  question: Water in a plastic bottle
   par défaut: 0
 
 ## prerace cake

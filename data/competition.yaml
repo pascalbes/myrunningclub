@@ -62,6 +62,7 @@ competition . international . events:
 
 competition . international . events . outdoor mid to long:
   titre: Road running race
+  icônes:  🛣️
   formule: 0.39 * number
   unité: kgCO2e
 
@@ -73,6 +74,7 @@ competition . international . events . outdoor mid to long . number:
 
 competition . international . events . trail:
   titre: Trail running race
+  icônes:  🏔 
   formule: 0.39 * number
   unité: kgCO2e
 
@@ -84,6 +86,7 @@ competition . international . events . trail . number:
 
 competition . international . events . outdoor tranck and field:
   titre: Outdoor track and field meeting
+  icônes:  🏟️
   formule: 0.82 * number
   unité: kgCO2e
 
@@ -95,6 +98,7 @@ competition . international . events . outdoor tranck and field . number:
 
 competition . international . events . indoor:
   titre: Indoor track and field meeting
+  icônes:  🏫
   formule: 3.38 * number
   unité: kgCO2e
 
@@ -398,10 +402,10 @@ competition . food . fruits . number:
 ## water bottle
 
 competition . food . water bottle:
-  titre: Water bottle
+  titre: Water in a plastic bottle
   icônes: 🥛
   formule: constantes . food . water bottle * number
   unité: kgCO2e
 competition . food . water bottle . number:
-  question: Water bottle
+  question: Water in a plastic bottle
   par défaut: 0
