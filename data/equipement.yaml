@@ -19,37 +19,37 @@ equipement:
 equipement . coefficient effort matériel:
   formule:
     variations: 
-      - si: effort = 'Low'
+      - si: effort = 'Never'
         alors: effort faible
-      - si: effort = 'Medium'
+      - si: effort = 'Often'
         alors: effort moyen
-      - si: effort = 'Maximum'
+      - si: effort = 'Always'
         alors: effort maximum
 
 equipement . coefficient effort matériel . effort faible:
-  formule: 1.5
+  formule: 1.33
 
 equipement . coefficient effort matériel . effort moyen:
   formule: 1
 
 equipement . coefficient effort matériel . effort maximum:
-  formule: 0.75
+  formule: 0.67
 
 equipement . coefficient effort matériel . effort:
-  question: What effort do you make to keep your equipment as long as possible?
-  par défaut: "'Moyen'"
+  question: Do you use your sports equipment until their limits (until they are destroyed and not working anymore)? 
+  par défaut: "'Often'"
   formule:
     une possibilité: 
       choix obligatoire: oui
       possibilités: 
-        - Low
-        - Medium
-        - Maximum
-      par défaut: Medium
+        - Never
+        - Often
+        - Always
+      par défaut: Often
 
-equipement . coefficient effort matériel . effort . Low:
-equipement . coefficient effort matériel . effort . Medium:
-equipement . coefficient effort matériel . effort . Maximum:
+equipement . coefficient effort matériel . effort . Never:
+equipement . coefficient effort matériel . effort . Often:
+equipement . coefficient effort matériel . effort . Always:
 
 # Achat Matériel
 
